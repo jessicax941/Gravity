@@ -12,14 +12,14 @@ else
 }
 
 // Apply gravity with collision
-if (place_meeting(x, y + vertSpeed, obj_wall) || place_meeting(x, y + vertSpeed, obj_platform))
+if (has_collision(x, y + vertSpeed))
 {
 	// There is collision with wall where player wants to go
 	var isColliding = false;
 	while (!isColliding)
 	{
 		// Move player step by step as long as there is no collision
-		if (!place_meeting(x, y + sign(vertSpeed), obj_wall) && !place_meeting(x, y + sign(vertSpeed), obj_platform))
+		if (!has_collision(x, y + sign(vertSpeed)))
 		{
 			y += sign(vertSpeed);
 		}
@@ -34,4 +34,3 @@ else
 {
 	y += vertSpeed;	
 }
-//y += vertSpeed;

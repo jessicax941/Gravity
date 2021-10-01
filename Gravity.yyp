@@ -5,6 +5,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"apply_movement","path":"scripts/apply_movement/apply_movement.yy",},"order":0,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
+    {"id":{"name":"check_collision","path":"scripts/check_collision/check_collision.yy",},"order":1,},
     {"id":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"order":1,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":3,},
     {"id":{"name":"room1","path":"rooms/room1/room1.yy",},"order":0,},

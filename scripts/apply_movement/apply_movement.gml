@@ -1,13 +1,14 @@
-function apply_movement()
+// Moves player in horizontal direction, after checking for collisions
+function apply_horizontal_movement()
 {
-	if (place_meeting(x + horizontalSpeed, y, obj_wall) || place_meeting(x + horizontalSpeed, y, obj_platform))
+	// Check for collision at target position
+	if (has_collision(x + horizontalSpeed, y))
 	{
-		// There is collision with wall where player wants to go
 		var isColliding = false;
 		while (!isColliding)
 		{
 			// Move player step by step as long as there is no collision
-			if (!place_meeting(x + sign(horizontalSpeed), y, obj_wall) && !place_meeting(x + sign(horizontalSpeed), y, obj_platform))
+			if (!has_collision(x + sign(horizontalSpeed), y))
 			{
 				x += sign(horizontalSpeed);
 			}
