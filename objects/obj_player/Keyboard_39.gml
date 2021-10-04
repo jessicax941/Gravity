@@ -1,7 +1,7 @@
 horizontalSpeed = walkSpeed;
 
 horizontalSpeed = horizontalSpeed*drag;
-
-apply_horizontal_movement(); // Also considers collision
-
+if (isGrounded) {
+	apply_horizontal_movement(); // Also considers collision
+}
 isFacingRight = true;
