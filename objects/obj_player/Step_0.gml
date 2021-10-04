@@ -8,7 +8,7 @@ if (place_meeting(x, y + yBuffer, obj_platform) || place_meeting(x, y + yBuffer,
 else 
 {
 	isGrounded = false;
-	vertSpeed += gravityValue;
+	vertSpeed = gravityValue;
 }
 
 // Apply gravity with collision
