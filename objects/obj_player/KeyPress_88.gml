@@ -8,17 +8,16 @@ show_debug_message("true");
 //}
 
 // Rotate only the elements in the layer (room) that player is currently in
-var currRoomLayerId = layer_get_id("Room0");
+var currRoomLayerId = layer_get_id(global.currentRoomName);
 var roomElements = layer_get_all_elements(currRoomLayerId);
 
 // Find room center object first
-var roomCenterInst;
+var roomInst;
 for (var i = 0; i < array_length(roomElements); i++;) {
 	var inst = layer_instance_get_instance(roomElements[i]);
-	if (inst.object_index == obj_room_center)
+	if (inst.object_index == obj_room_walls)
 	{
-		show_debug_message("found room center");
-		roomCenterInst = inst;
+		roomInst = inst;
 		break;
 	}
 }
@@ -27,7 +26,7 @@ for (var i = 0; i < array_length(roomElements); i++;) {
 for (var i = 0; i < array_length(roomElements); i++;) {
 	var inst = layer_instance_get_instance(roomElements[i]);
 	with (inst) {
-		rotate(true, roomCenterInst.x, roomCenterInst.y);
+		rotate(true, roomInst.x, roomInst.y);
 	}
 }
 

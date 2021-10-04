@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_door",
+    "path": "sprites/spr_door/spr_door.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -25,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_room_center",
+  "name": "obj_door",
   "tags": [],
   "resourceType": "GMObject",
 }
