@@ -1,36 +1,41 @@
-// Check if grounded and assign vertical speed 
-var yBuffer = 1;
-if (place_meeting(x, y + yBuffer, obj_platform) || place_meeting(x, y + yBuffer, obj_wall)) 
-{
-	isGrounded = true;
-	vertSpeed = 0;
-} 
-else 
-{
+// Check if any wall or platform is colliding with player feet and assign vertical speed 
+var playerFeetY = y + sprite_height/2;
+var playerFeetX1 = x - sprite_width/2; // Left side
+var playerFeetX2 = x + sprite_width/2; // Right side
+var platformInst = collision_rectangle(playerFeetX1, playerFeetY - 1, playerFeetX2, playerFeetY + 1, obj_platform, false, false);
+var wallInst = collision_rectangle(playerFeetX1, playerFeetY - 1, playerFeetX2, playerFeetY + 1, obj_wall, false, false);
+
+if (platformInst == noone && wallInst == noone) {
+	// No collision found	
 	isGrounded = false;
 	vertSpeed = gravityValue;
+} else {
+	isGrounded = true;
+	vertSpeed = 0;
 }
 
-// Apply gravity with collision
-if (has_collision(x, y + vertSpeed))
-{
-	// There is collision with wall where player wants to go
-	var isColliding = false;
-	while (!isColliding)
+if (!isRotating) {
+	// Apply gravity with collision
+	if (has_collision(x, y + vertSpeed))
 	{
-		// Move player step by step as long as there is no collision
-		if (!has_collision(x, y + sign(vertSpeed)))
+		// There is collision where player wants to go
+		var isColliding = false;
+		while (!isColliding)
 		{
-			y += sign(vertSpeed);
-		}
-		else
-		{
-			isColliding = true;
-			vertSpeed = 0;
+			// Move player step by step as long as there is no collision
+			if (!has_collision(x, y + sign(vertSpeed)))
+			{
+				y += sign(vertSpeed);
+			}
+			else
+			{
+				isColliding = true;
+				vertSpeed = 0;
+			}
 		}
 	}
-}
-else
-{
-	y += vertSpeed;	
+	else
+	{
+		y += vertSpeed;	
+	}
 }
