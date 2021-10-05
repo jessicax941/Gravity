@@ -1,6 +1,6 @@
 /// @description Rotate room clockwise
 isRotating = true;
-show_debug_message("true");
+//show_debug_message("true");
 
 //var roomParent = object_get_parent(obj_wall.object_index);
 //with (roomParent) {
@@ -31,4 +31,4 @@ for (var i = 0; i < array_length(roomElements); i++;) {
 }
 
 isRotating = false;
-show_debug_message("false");
+//show_debug_message("false");
