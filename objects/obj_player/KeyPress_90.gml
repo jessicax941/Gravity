@@ -27,5 +27,10 @@ if (isGrounded) {
 			rotate(false, roomInst.x, roomInst.y);
 		}
 	}
+	
+	with (self) {
+		rotate_player(false, roomInst.x, roomInst.y);
+	}
+	
 	isRotating = false;
 }

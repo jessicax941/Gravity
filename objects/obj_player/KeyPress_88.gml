@@ -30,7 +30,11 @@ isRotating = true;
 			rotate(true, roomInst.x, roomInst.y);
 		}
 	}
-
+	
+	with (self) {
+		rotate_player(true, roomInst.x, roomInst.y);
+	}
+	
 	isRotating = false;
 }
 //show_debug_message("false");
