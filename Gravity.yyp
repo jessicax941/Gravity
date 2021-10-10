@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"spr_corridor","path":"sprites/spr_corridor/spr_corridor.yy",},"order":7,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
     {"id":{"name":"spr_platform","path":"sprites/spr_platform/spr_platform.yy",},"order":2,},
     {"id":{"name":"spr_exit","path":"sprites/spr_exit/spr_exit.yy",},"order":6,},
@@ -8,6 +9,7 @@
     {"id":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"order":5,},
     {"id":{"name":"spr_room_walls","path":"sprites/spr_room_walls/spr_room_walls.yy",},"order":5,},
     {"id":{"name":"rotate","path":"scripts/rotate/rotate.yy",},"order":2,},
+    {"id":{"name":"spr_room","path":"sprites/spr_room/spr_room.yy",},"order":8,},
     {"id":{"name":"apply_movement","path":"scripts/apply_movement/apply_movement.yy",},"order":0,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
     {"id":{"name":"check_collision","path":"scripts/check_collision/check_collision.yy",},"order":1,},
@@ -66,7 +68,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.5.589",
+    "IDEVersion": "2.3.3.574",
   },
   "resourceVersion": "1.4",
   "name": "Gravity",
