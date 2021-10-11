@@ -23,6 +23,7 @@ function apply_horizontal_movement()
 	//{
 	//	x += horizontalSpeed;	
 	//}
+	var bboxSide;
 	
 	if (horizontalSpeed > 0)
 	{
@@ -54,6 +55,8 @@ function apply_horizontal_movement()
 }
 
 function apply_vertical_movement() {
+	
+	var bboxSide;
 	
 	if (vertSpeed > 0)
 	{
