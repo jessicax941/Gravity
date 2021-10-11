@@ -1,5 +1,6 @@
+/// @description Rotate room anti-clockwise
+
 if (isGrounded) {
-	/// @description Rotate room anti-clockwise
 	isRotating = true;
 	//var roomParent = object_get_parent(obj_wall.object_index);
 	//with (roomParent) {
@@ -13,7 +14,7 @@ if (isGrounded) {
 	var roomInst;
 	for (var i = 0; i < array_length(roomElements); i++;) {
 		var inst = layer_instance_get_instance(roomElements[i]);
-		if (inst.object_index == obj_room_walls)
+		if (inst.object_index == obj_room)
 		{
 			roomInst = inst;
 			break;

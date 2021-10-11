@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_room_walls",
-    "path": "sprites/spr_room_walls/spr_room_walls.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -30,7 +27,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_room_walls",
+  "name": "obj_collision",
   "tags": [],
   "resourceType": "GMObject",
 }

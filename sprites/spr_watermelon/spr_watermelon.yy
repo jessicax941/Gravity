@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","path":"sprites/spr_door/spr_door.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","path":"sprites/spr_door/spr_door.yy",},"LayerId":{"name":"adab063d-d4ba-4b50-a5ca-2703cf2b7a62","path":"sprites/spr_door/spr_door.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},"resourceVersion":"1.0","name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"eeb035da-8817-46b1-b2d5-94e6d8a023e3","path":"sprites/spr_watermelon/spr_watermelon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"eeb035da-8817-46b1-b2d5-94e6d8a023e3","path":"sprites/spr_watermelon/spr_watermelon.yy",},"LayerId":{"name":"bab7b839-9448-4497-8be9-89e6ab248215","path":"sprites/spr_watermelon/spr_watermelon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_watermelon","path":"sprites/spr_watermelon/spr_watermelon.yy",},"resourceVersion":"1.0","name":"eeb035da-8817-46b1-b2d5-94e6d8a023e3","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},
+    "spriteId": {"name":"spr_watermelon","path":"sprites/spr_watermelon/spr_watermelon.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"e5418138-eae9-4d07-a344-9fe0ccd0594f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","path":"sprites/spr_door/spr_door.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"298c3837-ba96-4931-ac61-fd50842171ed","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"eeb035da-8817-46b1-b2d5-94e6d8a023e3","path":"sprites/spr_watermelon/spr_watermelon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},
+    "parent": {"name":"spr_watermelon","path":"sprites/spr_watermelon/spr_watermelon.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_door",
+    "name": "spr_watermelon",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"adab063d-d4ba-4b50-a5ca-2703cf2b7a62","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bab7b839-9448-4497-8be9-89e6ab248215","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_door",
+  "name": "spr_watermelon",
   "tags": [],
   "resourceType": "GMSprite",
 }

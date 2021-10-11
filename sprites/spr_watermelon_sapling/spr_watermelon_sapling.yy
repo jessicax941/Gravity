@@ -8,13 +8,13 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 31,
+  "bbox_right": 29,
   "bbox_top": 0,
   "bbox_bottom": 31,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 32,
+  "width": 30,
   "height": 32,
   "textureGroupId": {
     "name": "Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","path":"sprites/spr_door/spr_door.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","path":"sprites/spr_door/spr_door.yy",},"LayerId":{"name":"adab063d-d4ba-4b50-a5ca-2703cf2b7a62","path":"sprites/spr_door/spr_door.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},"resourceVersion":"1.0","name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":{"name":"10c568d9-c372-44de-b3b1-0673c2ab8f5f","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},
+    "spriteId": {"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"e5418138-eae9-4d07-a344-9fe0ccd0594f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bb6584d8-f7ce-43d1-9124-fdc8d9284dc5","path":"sprites/spr_door/spr_door.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"300f945c-bc57-4804-bdb4-b21161e81674","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -54,18 +54,18 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 16,
+    "xorigin": 15,
     "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},
+    "parent": {"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_door",
+    "name": "spr_watermelon_sapling",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"adab063d-d4ba-4b50-a5ca-2703cf2b7a62","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"10c568d9-c372-44de-b3b1-0673c2ab8f5f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_door",
+  "name": "spr_watermelon_sapling",
   "tags": [],
   "resourceType": "GMSprite",
 }
