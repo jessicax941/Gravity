@@ -7,7 +7,7 @@ var wallInst = collision_rectangle(playerFeetX1, playerFeetY - 1, playerFeetX2, 
 
 if (platformInst == noone && wallInst == noone) {
 	// No collision found	
-	isGrounded = false;
+	isGrounded = true; //TEMP
 	vertSpeed = gravityValue;
 } else {
 	isGrounded = true;
@@ -15,27 +15,29 @@ if (platformInst == noone && wallInst == noone) {
 }
 
 if (!isRotating) {
-	// Apply gravity with collision
-	if (has_collision(x, y + vertSpeed))
-	{
-		// There is collision where player wants to go
-		var isColliding = false;
-		while (!isColliding)
-		{
-			// Move player step by step as long as there is no collision
-			if (!has_collision(x, y + sign(vertSpeed)))
-			{
-				y += sign(vertSpeed);
-			}
-			else
-			{
-				isColliding = true;
-				vertSpeed = 0;
-			}
-		}
-	}
-	else
-	{
-		y += vertSpeed;	
-	}
+	apply_vertical_movement();
+	
+	//// Apply gravity with collision
+	//if (has_collision(x, y + vertSpeed))
+	//{
+	//	// There is collision where player wants to go
+	//	var isColliding = false;
+	//	while (!isColliding)
+	//	{
+	//		// Move player step by step as long as there is no collision
+	//		if (!has_collision(x, y + sign(vertSpeed)))
+	//		{
+	//			y += sign(vertSpeed);
+	//		}
+	//		else
+	//		{
+	//			isColliding = true;
+	//			vertSpeed = 0;
+	//		}
+	//	}
+	//}
+	//else
+	//{
+	//	y += vertSpeed;	
+	//}
 }
