@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_room",
-    "path": "objects/obj_room/obj_room.yy",
+    "name": "obj_collision",
+    "path": "objects/obj_collision/obj_collision.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
