@@ -1,7 +1,7 @@
-/// @description Grow if SPACE is pressed
-var spacePressed = keyboard_check_pressed(vk_space);
+/// @description Grow if interaction key is pressed
+var interactPressed = keyboard_check_pressed(vk_space);
 
-if (spacePressed)
+if (interactPressed)
 {
 	var plant = instance_create_layer(x, y, global.currentRoomName, plantObj);
 	
@@ -18,6 +18,6 @@ if (spacePressed)
 	}
 	
 	instance_destroy();
-
+ 
 }
                       
