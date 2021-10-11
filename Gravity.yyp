@@ -22,6 +22,7 @@
     {"id":{"name":"obj_exit","path":"objects/obj_exit/obj_exit.yy",},"order":7,},
     {"id":{"name":"obj_watermelon_sapling","path":"objects/obj_watermelon_sapling/obj_watermelon_sapling.yy",},"order":9,},
     {"id":{"name":"obj_collision","path":"objects/obj_collision/obj_collision.yy",},"order":3,},
+    {"id":{"name":"obj_gravity","path":"objects/obj_gravity/obj_gravity.yy",},"order":11,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":3,},
     {"id":{"name":"rm_stage2","path":"rooms/rm_stage2/rm_stage2.yy",},"order":1,},
     {"id":{"name":"rm_stage1","path":"rooms/rm_stage1/rm_stage1.yy",},"order":0,},

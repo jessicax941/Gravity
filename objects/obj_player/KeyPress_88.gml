@@ -2,8 +2,7 @@
 
 if (isGrounded) {
 
-	isRotating = true;
-	//show_debug_message("true");
+	global.isRotating = true;
 
 	//var roomParent = object_get_parent(obj_wall.object_index);
 	//with (roomParent) {
@@ -35,6 +34,5 @@ if (isGrounded) {
 	
 	rotate(true, roomInst.x, roomInst.y);
 	
-	isRotating = false;
+	global.isRotating = false;
 }
-//show_debug_message("false");

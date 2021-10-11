@@ -1,7 +1,7 @@
 /// @description Rotate room anti-clockwise
 
 if (isGrounded) {
-	isRotating = true;
+	global.isRotating = true;
 	//var roomParent = object_get_parent(obj_wall.object_index);
 	//with (roomParent) {
 	//	rotate(false);
@@ -31,5 +31,5 @@ if (isGrounded) {
 	
 	rotate(false, roomInst.x, roomInst.y);
 	
-	isRotating = false;
+	global.isRotating = false;
 }

@@ -1,4 +1,4 @@
-// Check if collision object is colliding with player feet and assign vertical speed 
+/// @description Insert description here
 var collisionInst = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_collision, false, false);
 
 if (collisionInst == noone) {
