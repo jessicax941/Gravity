@@ -11,25 +11,26 @@ if (isGrounded) {
 	var roomElements = layer_get_all_elements(currRoomLayerId);
 
 	// Find room center object first
-	var roomInst;
-	for (var i = 0; i < array_length(roomElements); i++;) {
-		var inst = layer_instance_get_instance(roomElements[i]);
-		if (inst.object_index == obj_room)
-		{
-			roomInst = inst;
-			break;
-		}
-	}
+	//var roomInst;
+	//for (var i = 0; i < array_length(roomElements); i++;) {
+	//	var inst = layer_instance_get_instance(roomElements[i]);
+	//	if (inst.object_index == obj_room)
+	//	{
+	//		roomInst = inst;
+	//		break;
+	//	}
+	//}
 
 	// Rotate all elements in the layer
 	for (var i = 0; i < array_length(roomElements); i++;) {
 		var inst = layer_instance_get_instance(roomElements[i]);
 		with (inst) {
-			rotate(false, roomInst.x, roomInst.y);
+			rotate(false);
 		}
 	}
 	
-	rotate(false, roomInst.x, roomInst.y);
+	// Rotate player
+	rotate(false);
 	
 	global.isRotating = false;
 }

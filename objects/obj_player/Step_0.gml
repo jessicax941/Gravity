@@ -6,7 +6,6 @@
 	var watermelon = instance_place(x + interactionRadius, y, obj_watermelon);
 	if (watermelon != noone)
 	{
-		
 		watermelon.horizontalSpeed = horizontalSpeed + sign(horizontalSpeed);
 	}
 	
@@ -24,14 +23,16 @@
 #endregion
 
 #region GRAVITY AND VERTICAL COLLISION
-	// Check if collision object is colliding with player feet and assign vertical speed 
+	// Check if collision object is colliding with player and assign vertical speed 
 	var collisionInst = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_collision, false, false);
 
 	if (collisionInst == noone) {
-		// No collision found	
+		// No collision found
+		show_debug_message("no collision");
 		isGrounded = false;
 		vertSpeed = gravityValue;
 	} else {
+		show_debug_message("collision");
 		isGrounded = true;
 		vertSpeed = 0;
 	}
@@ -40,6 +41,7 @@
 		// Apply gravity with collision
 		if (has_collision(x, y + vertSpeed))
 		{
+			//show_debug_message("player step: collision at y + vertspeed");
 			// There is collision where player wants to go
 			var isColliding  = false;
 			while (!isColliding)
@@ -47,10 +49,12 @@
 				// Move player step by step as long as there is no collision
 				if (!has_collision(x, y + sign(vertSpeed)))
 				{
+					//show_debug_message("player step: not colliding");
 					y += sign(vertSpeed);
 				}
 				else
 				{
+					//show_debug_message("player step: colliding");
 					isColliding = true;
 					vertSpeed = 0;
 				}
@@ -58,6 +62,7 @@
 		}
 		else
 		{
+			//show_debug_message("player step: y += vertspeed");
 			y += vertSpeed;	
 		}
 	}

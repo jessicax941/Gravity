@@ -33,6 +33,7 @@ if (isGrounded) {
 		}
 	}
 	
+	// Rotate player
 	rotate(true);
 	
 	global.isRotating = false;
