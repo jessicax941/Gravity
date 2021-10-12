@@ -1,22 +1,23 @@
-draw_circle_color(x, y, interactionRadius, c_white, c_black, true);
+//draw_circle_color(x, y, interactionRadius, c_white, c_black, true);
 
 #region PUSH AND PULL WATERMELON
 
 	// Pushing
-	var watermelon = instance_place(x + horizontalSpeed, y, obj_watermelon);
+	var watermelon = instance_place(x + interactionRadius, y, obj_watermelon);
 	if (watermelon != noone)
 	{
-		watermelon.x += horizontalSpeed + sign(horizontalSpeed);
+		
+		watermelon.horizontalSpeed = horizontalSpeed + sign(horizontalSpeed);
 	}
 	
 	// Pulling
 	if (keyboard_check(vk_space))
 	{
-		watermelon = collision_circle(x, y, sprite_width/2 + 1, obj_watermelon, false, false);
+		watermelon = collision_circle(x, y, sprite_width/2 + interactionRadius * 2, obj_watermelon, false, false);
 		if (watermelon != noone)
 		{
-			show_debug_message("hello: " + string(horizontalSpeed));
-			watermelon.x += horizontalSpeed;	
+			//show_debug_message("pulling: " + string(horizontalSpeed));
+			watermelon.horizontalSpeed = horizontalSpeed;	
 		}
 	}
 

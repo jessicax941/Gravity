@@ -1,4 +1,7 @@
 /// @description Insert description here
-// You can write your code in this editor
-show_debug_message(layer);
-show_debug_message(layer_get_id(global.currentRoomName));
+var player = instance_place(x, y, obj_player);
+if (player != noone)
+{
+	player.x = x;
+	player.y = y - global.tileSize;
+}

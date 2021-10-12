@@ -1,10 +1,10 @@
 // Runs from objects in room layer
-function rotate(isClockwise, roomCenterX, roomCenterY) {
+function rotate(isClockwise) {
 	var rotation = isClockwise ? -90 : 90;
 
 	// Rotate around centre of room
-	//var roomCenterX = room_width / 2;
-	//var roomCenterY = room_height / 2;
+	var roomCenterX = global.roomCenterX;
+	var roomCenterY = global.roomCenterY;
 	var radius = point_distance(roomCenterX, roomCenterY, x, y);
 	var phase = point_direction(roomCenterX, roomCenterY, x, y);
 	
