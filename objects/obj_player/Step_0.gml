@@ -1,24 +1,33 @@
 //draw_circle_color(x, y, interactionRadius, c_white, c_black, true);
 
+
+if (horizontalSpeed != 0) {
+	image_xscale = sign(horizontalSpeed);
+}
+
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+
+
+
 #region PUSH AND PULL WATERMELON
 
 	// Pushing
-	var watermelon = instance_place(x + interactionRadius, y, obj_watermelon);
-	if (watermelon != noone)
-	{
-		watermelon.horizontalSpeed = horizontalSpeed + sign(horizontalSpeed);
-	}
+	//var watermelon = instance_place(x + interactionRadius, y, obj_watermelon);
+	//if (watermelon != noone)
+	//{
+	//	watermelon.horizontalSpeed = horizontalSpeed + sign(horizontalSpeed);
+	//}
 	
-	// Pulling
-	if (keyboard_check(vk_space))
-	{
-		watermelon = collision_circle(x, y, sprite_width/2 + interactionRadius * 2, obj_watermelon, false, false);
-		if (watermelon != noone)
-		{
-			//show_debug_message("pulling: " + string(horizontalSpeed));
-			watermelon.horizontalSpeed = horizontalSpeed;	
-		}
-	}
+	//// Pulling
+	//if (keyboard_check(vk_space))
+	//{
+	//	watermelon = collision_circle(x, y, sprite_width/2 + interactionRadius * 2, obj_watermelon, false, false);
+	//	if (watermelon != noone)
+	//	{
+	//		//show_debug_message("pulling: " + string(horizontalSpeed));
+	//		watermelon.horizontalSpeed = horizontalSpeed;	
+	//	}
+	//}
 
 #endregion
 

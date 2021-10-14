@@ -13,5 +13,7 @@ function rotate(isClockwise) {
 	y = roomCenterY - radius * dsin(phase);
 	
 	// Rotate around object's own origin
-	image_angle += rotation;
+	if (object_index != obj_player) {
+		image_angle += rotation;
+	}
 }
