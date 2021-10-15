@@ -1,32 +1,23 @@
 // Moves player in horizontal direction, after checking for collisions
-function apply_horizontal_movement()
-{
+function apply_horizontal_movement() {
 	// Check for collision at target position
-	if (has_collision(x + horizontalSpeed, y))
-	{
+	if (has_collision(x + horizontalSpeed, y)) {
 		var isColliding = false;
-		while (!isColliding)
-		{
+		while (!isColliding) {
 			// Move player step by step as long as there is no collision
-			if (!has_collision(x + sign(horizontalSpeed), y))
-			{
+			if (!has_collision(x + sign(horizontalSpeed), y)) {
 				x += sign(horizontalSpeed);
-			}
-			else
-			{
+			} else {
 				isColliding = true;
 				horizontalSpeed = 0;
 			}
 		}
-	}
-	else
-	{
+	} else {
 		x += horizontalSpeed;	
 	}
 }
 
-function apply_gravity()
-{
+function apply_gravity() {
 	// For objects with gravity
 	var collisionWithWall = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_wall, false, false) 
 	var collisionWithPlatform = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_platform, false, false);
@@ -45,26 +36,19 @@ function apply_gravity()
 
 	if (!global.isRotating) {
 		// Apply gravity with collision
-		if (has_collision(x, y + vertSpeed))
-		{
+		if (has_collision(x, y + vertSpeed)) {
 			// There is collision where player wants to go
 			var isColliding  = false;
-			while (!isColliding)
-			{
+			while (!isColliding) {
 				// Move player step by step as long as there is no collision
-				if (!has_collision(x, y + sign(vertSpeed)))
-				{
+				if (!has_collision(x, y + sign(vertSpeed))) {
 					y += sign(vertSpeed);
-				}
-				else
-				{
+				} else {
 					isColliding = true;
 					vertSpeed = 0;
 				}
 			}
-		}
-		else
-		{
+		} else {
 			y += vertSpeed;	
 		}
 	}	

@@ -37,40 +37,33 @@ draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, ima
 
 	if (collisionInst == noone) {
 		// No collision found
-		show_debug_message("no collision");
+		//show_debug_message("no collision");
 		isGrounded = false;
 		vertSpeed = gravityValue;
 	} else {
-		show_debug_message("collision");
+		//show_debug_message("collision");
 		isGrounded = true;
 		vertSpeed = 0;
 	}
 
 	if (!global.isRotating) {
 		// Apply gravity with collision
-		if (has_collision(x, y + vertSpeed))
-		{
+		if (has_collision(x, y + vertSpeed)) {
 			//show_debug_message("player step: collision at y + vertspeed");
 			// There is collision where player wants to go
 			var isColliding  = false;
-			while (!isColliding)
-			{
+			while (!isColliding) {
 				// Move player step by step as long as there is no collision
-				if (!has_collision(x, y + sign(vertSpeed)))
-				{
+				if (!has_collision(x, y + sign(vertSpeed))) {
 					//show_debug_message("player step: not colliding");
 					y += sign(vertSpeed);
-				}
-				else
-				{
+				} else {
 					//show_debug_message("player step: colliding");
 					isColliding = true;
 					vertSpeed = 0;
 				}
 			}
-		}
-		else
-		{
+		} else {
 			//show_debug_message("player step: y += vertspeed");
 			y += vertSpeed;	
 		}
