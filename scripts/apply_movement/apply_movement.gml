@@ -17,14 +17,16 @@ function apply_horizontal_movement() {
 	}
 }
 
+// For objects with gravity (excluding player)
 function apply_gravity() {
-	// For objects with gravity (excluding player)
 	var collisionWithWall = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_wall, false, false) 
 	var collisionWithPlatform = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_platform, false, false);
 	var isGrounded = false; 
 	var gravityValue = obj_player.gravityValue + 0.5;
 	var vertSpeed;
 	 
+	 	//if (!has_rect_collision(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1)) {
+
 	if (collisionWithWall == noone && collisionWithPlatform == noone) {
 		// No collision found	
 		isGrounded = false;

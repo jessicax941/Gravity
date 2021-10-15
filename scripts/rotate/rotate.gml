@@ -56,7 +56,7 @@ function rotate_object(isClockwise) {
 	y = roomCenterY - radius * dsin(phase);
 	
 	// Rotate around object's own origin
-	if (object_index != obj_player) {
+	if (object_index != obj_player && object_index != obj_watermelon) {
 		image_angle += rotation;
 	}
 }
@@ -65,6 +65,7 @@ function rotate_watermelon(isClockwise) {
 	var roomInst = instance_place(x, y, obj_room);
 	if (roomInst != noone) {
 		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY && obj_player.isGrounded) {
+			// Watermelon is in the room that player is in and player is grounded
 			rotate_object(isClockwise);
 		}
 	}

@@ -20,9 +20,12 @@ function has_rect_collision(x1, y1, x2, y2) {
 	var hasCollision = false;
 	for (var i = 0; i < length; i++) {
 		var objectToCheck = ds_list_find_value(global.collisionObjects, i);
-		if (collision_rectangle(x1, y1, x2, y2, objectToCheck, false, false) != noone) {
-			hasCollision = true;
-			break;
+		if (objectToCheck) {
+			if (collision_rectangle(x1, y1, x2, y2, objectToCheck, false, false) != noone) {
+				hasCollision = true;	
+				break;
+			}
+			//show_debug_message("collision for " + object_get_name(objectToCheck) + ": " + string(hasCollision));
 		}
 	}
 	
