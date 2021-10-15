@@ -5,8 +5,8 @@ if (horizontalSpeed != 0) {
 	image_xscale = sign(horizontalSpeed);
 }
 
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-
+//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_self();
 
 
 #region PUSH AND PULL WATERMELON
@@ -33,9 +33,10 @@ draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, ima
 
 #region GRAVITY AND VERTICAL COLLISION
 	// Check if collision object is colliding with player and assign vertical speed 
-	var collisionInst = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_collision, false, false);
+	//var collisionInst = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_collision, false, false);
 
-	if (collisionInst == noone) {
+	//if (collisionInst == noone) {
+	if (!has_rect_collision(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1)) {
 		// No collision found
 		//show_debug_message("no collision");
 		isGrounded = false;

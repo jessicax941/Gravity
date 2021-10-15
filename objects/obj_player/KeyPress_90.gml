@@ -12,7 +12,16 @@ if (isGrounded) {
 		var inst = layer_instance_get_instance(roomElements[i]);
 		with (inst) {
 			rotate(false);
+			
+			//if (inst.object_index == obj_closed_door) {
+			//	is_door_unlocked();	
+			//}
 		}
+	}
+	
+	// Lock or unlock doors if necessary
+	with (obj_door) {
+		check_door_lock();	
 	}
 	
 	// Rotate player

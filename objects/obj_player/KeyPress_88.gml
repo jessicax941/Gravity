@@ -1,7 +1,6 @@
 /// @description Rotate room clockwise
 
 if (isGrounded) {
-
 	global.isRotating = true;
 
 	// Rotate only the elements in the layer (room) that player is currently in
@@ -14,7 +13,16 @@ if (isGrounded) {
 		with (inst) {
 			//show_debug_message("rotating " + string(inst.object_index == obj_watermelon));
 			rotate(true);
+			
+			//if (inst.object_index == obj_closed_door) {
+			//	is_door_unlocked();	
+			//}
 		}
+	}
+	
+	// Lock or unlock doors if necessary
+	with (obj_door) {
+		check_door_lock();	
 	}
 	
 	// Rotate player
