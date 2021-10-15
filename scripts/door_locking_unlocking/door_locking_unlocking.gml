@@ -1,30 +1,16 @@
 // Check if a closed door is aligned to another door
-// If true then change both closed doors to open
-
-// Check if there's a door and corridor to one side of this door
-// If there is then unlock this one (change to open door)
-// If not then lock this door (change to closed door)
-// Run this for all the doors -> including those not being rotated so that they can lock themselves back
-
+// If true then unlock the calling door instance
+// If it is not aligned to a door on all four sides, lock the calling door instance
 function check_door_lock() {
+	// Check top
 	var checkCorridorX = x;
 	var checkCorridorY = y - global.tileSize;
 	var checkOtherDoorX = x;
 	var checkOtherDoorY = checkCorridorY - global.tileSize;
-	
-	// Check top
 	if (has_door_and_corridor(checkCorridorX, checkCorridorY, checkOtherDoorX, checkOtherDoorY)) {
 		unlock_door();
 		return;
 	}
-	//if (otherDoor != noone) {
-	//	instance_change(obj_open_door, true);
-	//	with (otherDoor) {
-	//		instance_change(obj_open_door, true);
-	//	}
-	//	show_debug_message("top: change to open doors");
-	//	return;
-	//}
 	
 	// Check bottom
 	checkCorridorX = x;
@@ -45,15 +31,12 @@ function check_door_lock() {
 		unlock_door();
 		return;
 	}
-
 	
 	// Check right
 	checkCorridorX = x + global.tileSize;
 	checkCorridorY = y;
 	checkOtherDoorX = checkCorridorX + global.tileSize;
 	checkOtherDoorY = y;
-	//show_debug_message("checking right corridor at " + string(checkCorridorX) + ", " + string(checkCorridorY));
-	//show_debug_message("checking right door at " + string(checkOtherDoorX) + ", " + string(checkOtherDoorY));
 	if (has_door_and_corridor(checkCorridorX, checkCorridorY, checkOtherDoorX, checkOtherDoorY)) {
 		unlock_door();
 		return;
@@ -62,25 +45,10 @@ function check_door_lock() {
 	// No corridor and another closed door found
 	show_debug_message("cannot unlock door at " + string(x) + ", " + string(y));
 	lock_door();
-	//return false;
 }
 
 // Returns true if a corridor and door are found at the given positions
-function has_door_and_corridor(corridorX, corridorY, otherDoorX, otherDoorY) {
-	//if (place_meeting(corridorX, corridorY, obj_corridor) && place_meeting(otherDoorX, otherDoorY, obj_closed_door)) {
-	//	show_debug_message("checking at: " + string(x) + ", " + string(y));
-	//	show_debug_message("unlock door: right @" + string(corridorX) + ", " + string(corridorY));
-	//	return true;
-	//} else {
-	//	return false;
-	//}
-	
-	//if (place_meeting(corridorX, corridorY, obj_corridor)) {
-	//	return instance_place(otherDoorX, otherDoorY, obj_closed_door);
-	//} else {
-	//	return noone;
-	//}
-	
+function has_door_and_corridor(corridorX, corridorY, otherDoorX, otherDoorY) {	
 	return (place_meeting(corridorX, corridorY, obj_corridor) && place_meeting(otherDoorX, otherDoorY, obj_door));
 }
 

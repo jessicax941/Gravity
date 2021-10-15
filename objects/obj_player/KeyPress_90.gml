@@ -11,11 +11,7 @@ if (isGrounded) {
 	for (var i = 0; i < array_length(roomElements); i++;) {
 		var inst = layer_instance_get_instance(roomElements[i]);
 		with (inst) {
-			rotate(false);
-			
-			//if (inst.object_index == obj_closed_door) {
-			//	is_door_unlocked();	
-			//}
+			rotate_object(false);
 		}
 	}
 	
@@ -25,7 +21,7 @@ if (isGrounded) {
 	}
 	
 	// Rotate player
-	rotate(false);
+	rotate_object(false);
 	
 	// Move player if collide with wall/platform after rotating
 	if (has_collision(x, y)) {

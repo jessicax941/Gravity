@@ -11,8 +11,6 @@ function has_collision(targetX, targetY) {
 			break;
 		}
 	}
-	
-	//return place_meeting(targetX, targetY, obj_collision);
 
 	return hasCollision;
 }

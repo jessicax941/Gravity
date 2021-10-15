@@ -1,5 +1,5 @@
 // Runs from objects in room layer
-function rotate(isClockwise) {
+function rotate_object(isClockwise) {
 	var rotation = isClockwise ? -90 : 90;
 
 	// Rotate around centre of room
