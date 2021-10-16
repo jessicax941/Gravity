@@ -29,16 +29,28 @@ function rotate_player(isClockwise) {
 	rotate_object(isClockwise);
 	
 	// Move player if collide with wall/platform after rotating
-	if (has_collision(x, y)) {
-		show_debug_message("collision");
-		if (has_collision(x, bbox_top)) {
-			// Collision with top of sprite
-			y += sprite_yoffset;
-		} else {
-			// Collision with bottom of sprite
+	// First check if there is collision with the current tile that player is in
+	var tileCenterX = x - (x % global.tileSize) + global.tileSize / 2;
+	var tileCenterY = y - (y % global.tileSize) + global.tileSize / 2;
+	
+	if (!has_collision(tileCenterX, tileCenterY)) {
+		// No collision, assign player to the center of current tile
+		x = tileCenterX;
+		y = tileCenterY;
+	} else {
+		// Collision with something at current tile, move sprite upwards or downwards
+		// Move sprite upwards if no collision with top of sprite
+		if (!has_collision(x, bbox_top)) {
 			y -= sprite_yoffset;
+			return;
+		}
+		
+		if (!has_collision(x, bbox_bottom)) {
+			// Move sprite downwards if no collision with bottom of sprite
+			y += sprite_yoffset;
 		}
 	}
+
 }
 
 // Runs from objects in room layer

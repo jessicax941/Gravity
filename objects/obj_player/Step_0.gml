@@ -8,9 +8,9 @@ draw_self();
 
 #region GRAVITY AND VERTICAL COLLISION
 	// Check if collision object is colliding with player and assign vertical speed
-	show_debug_message("y: " + string(y));
-	show_debug_message("bbox_bottom: " + string(bbox_bottom));
-	show_debug_message("y + sprite_yoffset: " + string(y + sprite_yoffset));
+	//show_debug_message("y: " + string(y));
+	//show_debug_message("bbox_bottom: " + string(bbox_bottom));
+	//show_debug_message("y + sprite_yoffset: " + string(y + sprite_yoffset));
 	if (!has_rect_collision(bbox_left, y + sprite_yoffset - 1, bbox_right, y + sprite_yoffset + 1)) {
 		// No collision found
 		//show_debug_message("no collision");
