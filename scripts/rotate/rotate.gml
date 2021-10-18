@@ -1,7 +1,7 @@
 // Called when Z (anti-clockwise) or X (clockwise) is pressed
 function on_rotate(isClockwise) {
-	var rotation = isClockwise ? -90 : 90;
-	global.rotationAngle = (global.rotationAngle + rotation) % 360;
+	//var rotation = isClockwise ? -90 : 90;
+	//global.rotationAngle = (global.rotationAngle + rotation) % 360;
 	rotate_room(isClockwise);
 	rotate_player(isClockwise);
 }
@@ -27,6 +27,11 @@ function rotate_room(isClockwise) {
 }
 
 function rotate_player(isClockwise) {
+	//// Don't rotate player if on beanstalk
+	//if (place_meeting(x, y, obj_beanstalk)) {
+	//	return;
+	//}
+	
 	// Rotate player
 	rotate_object(isClockwise);
 	
@@ -79,8 +84,13 @@ function rotate_object(isClockwise) {
 function rotate_plant(isClockwise) {
 	var roomInst = instance_place(x, y, obj_room);
 	if (roomInst != noone) {
-		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY && obj_player.isGrounded) {
-			// Plant is in the room that player is in and player is grounded
+		//var plantIsInSameRoom = roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY;
+		//var canRotate = obj_player.isGrounded || (!obj_player.isGrounded && place_meeting(obj_player.x, obj_player.y, obj_beanstalk));
+		//if (plantIsInSameRoom && canRotate) {
+		//	rotate_object(isClockwise);	
+		//}
+		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY) {
+			// Plant is in the room that player is in
 			rotate_object(isClockwise);
 		}
 	}

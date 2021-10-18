@@ -17,6 +17,24 @@ function apply_horizontal_movement() {
 	}
 }
 
+function apply_vertical_movement(spd) {
+	// Check for collision at target position
+	if (has_collision(x, y + spd)) {
+		var isColliding = false;
+		while (!isColliding) {
+			// Move player step by step as long as there is no collision
+			if (!has_collision(x, y + sign(spd))) {
+				y += sign(spd);
+			} else {
+				isColliding = true;
+				spd = 0;
+			}
+		}
+	} else {
+		y += spd;	
+	}
+}
+
 // For objects with gravity (excluding player)
 function apply_gravity() {
 	var collisionWithWall = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_wall, false, false) 
@@ -26,8 +44,6 @@ function apply_gravity() {
 	var isGrounded = false; 
 	var gravityValue = obj_player.gravityValue;
 	var vertSpeed;
-	 
-	 	//if (!has_rect_collision(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1)) {
 
 	if (collisionWithWall == noone && collisionWithPlatform == noone && collisionWithPlayer == noone) {
 		// No collision found	

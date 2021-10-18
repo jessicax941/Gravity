@@ -1,3 +1,5 @@
 /// @description Rotate anticlockwise
-var isClockwise = false;
-rotate_plant(isClockwise);
+if (obj_player.isGrounded) {
+	var isClockwise = false;
+	rotate_plant(isClockwise);
+}

@@ -1,5 +1,3 @@
-//
-
 if (horizontalSpeed != 0) {
 	image_xscale = sign(horizontalSpeed);
 }
@@ -19,7 +17,8 @@ draw_self();
 		vertSpeed = 0;
 	}
 
-	if (!global.isRotating) {
+	// Apply gravity only when not rotating and not on a beanstalk
+	if (!global.isRotating && !place_meeting(x, y, obj_beanstalk)) {
 		// Apply gravity with collision
 		if (has_collision(x, y + vertSpeed)) {
 			// There is collision where player wants to go
@@ -57,16 +56,32 @@ draw_self();
 			
 			var tileAboveY = get_tile_center(beanstalk.x, beanstalk.y - global.tileSize)[1];
 			
-			// Grow the other beanstalks
+			// Grow the other beanstalks until hit a collision object
 			while (!has_collision(beanstalk.x, tileAboveY)) {
 				// The tile above has no collision objects
-				//var newBeanstalk = grow_plant(obj_beanstalk);
-				//newBeanstalk.x = x;
-				//newBeanstalk.y = tileAboveY;		
 				grow_plant(obj_beanstalk, beanstalk.x, tileAboveY);
 				tileAboveY = get_tile_center(beanstalk.x, tileAboveY - global.tileSize)[1];
-			}
-				
+			}	
 		}
 	}
+#endregion
+
+#region MOVE ALONG BEANSTALK
+	// Move player along the beanstalk if player collides with a beanstalk
+	if (place_meeting(x, y, obj_beanstalk)) {
+		
+		// Move up only if there is a beanstalk above
+		if (keyboard_check(vk_up)) {
+			if (place_meeting(x, y - global.tileSize, obj_beanstalk)) {
+				apply_vertical_movement(-horizontalSpeed);
+			}
+		}
+		
+		// Move down
+		if (keyboard_check(vk_down)) {
+			apply_vertical_movement(horizontalSpeed);
+		}
+	}
+
+
 #endregion
