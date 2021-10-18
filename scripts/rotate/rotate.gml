@@ -1,5 +1,7 @@
 // Called when Z (anti-clockwise) or X (clockwise) is pressed
 function on_rotate(isClockwise) {
+	var rotation = isClockwise ? -90 : 90;
+	global.rotationAngle = (global.rotationAngle + rotation) % 360;
 	rotate_room(isClockwise);
 	rotate_player(isClockwise);
 }
@@ -30,8 +32,9 @@ function rotate_player(isClockwise) {
 	
 	// Move player if collide with wall/platform after rotating
 	// First check if there is collision with the current tile that player is in
-	var tileCenterX = x - (x % global.tileSize) + global.tileSize / 2;
-	var tileCenterY = y - (y % global.tileSize) + global.tileSize / 2;
+	var tileCentres = get_tile_center(x, y);
+	var tileCenterX = tileCentres[0];
+	var tileCenterY = tileCentres[1];
 	
 	if (!has_collision(tileCenterX, tileCenterY)) {
 		// No collision, assign player to the center of current tile
@@ -73,11 +76,11 @@ function rotate_object(isClockwise) {
 	}
 }
 
-function rotate_watermelon(isClockwise) {
+function rotate_plant(isClockwise) {
 	var roomInst = instance_place(x, y, obj_room);
 	if (roomInst != noone) {
 		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY && obj_player.isGrounded) {
-			// Watermelon is in the room that player is in and player is grounded
+			// Plant is in the room that player is in and player is grounded
 			rotate_object(isClockwise);
 		}
 	}

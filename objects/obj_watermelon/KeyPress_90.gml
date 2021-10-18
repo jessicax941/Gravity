@@ -1,4 +1,3 @@
 /// @description Rotate anticlockwise
 var isClockwise = false;
-rotate_watermelon(isClockwise);
-
+rotate_plant(isClockwise);
