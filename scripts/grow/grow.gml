@@ -1,17 +1,18 @@
 function grow_plant(obj, xx, yy) {
-	var plant = instance_create_layer(xx, yy, global.currentRoomName, obj);
-	
+	var plant = instance_create_layer(xx, yy, global.roomId.layer, obj);
+	show_debug_message("layer: " + layer_get_name(global.roomId.layer));
 	// Make sure plant spawns in front
-	var currRoomLayerId = layer_get_id(global.currentRoomName);
-	var roomElements = layer_get_all_elements(currRoomLayerId);
-	for (var i = 0; i < array_length(roomElements); i++;) {
-		var inst = layer_instance_get_instance(roomElements[i]);
-		if (inst.object_index == obj_room)
-		{
-			plant.depth = inst.depth - 1;
-			break;
-		}
-	}
+	//var currRoomLayerId = global.roomId.layer;
+	plant.depth = global.roomId.depth - 1;
+	//var roomElements = layer_get_all_elements(currRoomLayerId);
+	//for (var i = 0; i < array_length(roomElements); i++;) {
+	//	var inst = layer_instance_get_instance(roomElements[i]);
+	//	if (inst.object_index == obj_room)
+	//	{
+	//		plant.depth = inst.depth - 1;
+	//		break;
+	//	}
+	//}
 	
 	return plant;
 }
@@ -22,7 +23,7 @@ function grow_watermelon() {
 	instance_destroy();
 }
 
-function grow_beanstalk() {
+//function grow_beanstalk() {
 	// Grown from watermelon
 	//var beanstalk = grow_plant(obj_beanstalk, x, y);
 	//instance_destroy();
@@ -44,4 +45,4 @@ function grow_beanstalk() {
 	//	grow_plant(obj_beanstalk, beanstalk.x, tileAboveY);
 	//}
 	
-}
+//}

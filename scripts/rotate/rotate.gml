@@ -80,8 +80,8 @@ function rotate_object(isClockwise) {
 	var rotation = isClockwise ? -90 : 90;
 
 	// Rotate around centre of room
-	var roomCenterX = global.roomCenterX;
-	var roomCenterY = global.roomCenterY;
+	var roomCenterX = global.roomId.x;
+	var roomCenterY = global.roomId.y;
 	var radius = point_distance(roomCenterX, roomCenterY, x, y);
 	var phase = point_direction(roomCenterX, roomCenterY, x, y);
 	
@@ -98,7 +98,7 @@ function rotate_object(isClockwise) {
 function rotate_plant(isClockwise) {
 	var roomInst = instance_place(x, y, obj_room);
 	if (roomInst != noone) {
-		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY && can_rotate()) {
+		if (roomInst.x == global.roomId.x && roomInst.y == global.roomId.y && can_rotate()) {
 			// Plant is in the room that player is in
 			var prevX = x;
 			var prevY = y;
