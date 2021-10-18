@@ -1,7 +1,13 @@
-/// @description Get room layer
-// You can write your code in this editor
-//global.currentRoomName = layer_get_name(layer);
-//global.roomCenterX = x;
-//global.roomCenterY = y;
+/// @description Get room layer and activate powerups
 global.roomId = id;
-//show_debug_message(global.roomId);
+if (activateGrowingMelon) {
+	with (obj_player) {
+		canGrowMelon = true;	
+	}
+}
+
+if (activateGrowingBeanstalk) {
+	with (obj_player) {
+		canGrowBeanstalk = true;
+	}
+}
