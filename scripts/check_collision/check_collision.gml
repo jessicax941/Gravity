@@ -30,7 +30,3 @@ function has_rect_collision(x1, y1, x2, y2) {
 	
 	return hasCollision;
 }
-
-function is_player_on_beanstalk() {
-	return place_meeting(obj_player.x, obj_player.y, obj_beanstalk);
-}

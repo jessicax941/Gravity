@@ -5,7 +5,7 @@ if (horizontalSpeed != 0) {
 draw_self();
 
 #region GRAVITY AND VERTICAL COLLISION
-	// Check if collision object is colliding with player and assign vertical speed
+	// Check if collision object is colliding with player feet and assign vertical speed
 	if (!has_rect_collision(bbox_left, y + sprite_yoffset - 1, bbox_right, y + sprite_yoffset + 1)) {
 		// No collision found
 		isGrounded = false;
@@ -16,7 +16,7 @@ draw_self();
 	}
 
 	// Apply gravity only when not rotating and not entirely on a beanstalk
-	if (!global.isRotating && !position_meeting(x, y - sprite_yoffset, obj_beanstalk)) {
+	if (!global.isRotating && !position_meeting(x, bbox_top, obj_beanstalk)) {
 		// Apply gravity with collision
 		if (has_collision(x, y + vertSpeed)) {
 			// There is collision where player wants to go
