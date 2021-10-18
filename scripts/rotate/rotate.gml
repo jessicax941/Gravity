@@ -17,26 +17,16 @@ function on_rotate(isClockwise) {
 // Called from player 
 function rotate_room(isClockwise) {
 	var objectsToRotate = ds_list_create();
-	//var numObj = instance_place_list(global.roomId.x, global.roomId.y, all, objectsToRotate, true);
 	var numObj = collision_rectangle_list(global.roomId.bbox_left - global.tileSize, global.roomId.bbox_top - global.tileSize, 
 		global.roomId.bbox_right + global.tileSize, global.roomId.bbox_bottom + global.tileSize, all, false, true, objectsToRotate, true);
-	show_debug_message("num to rotate: " + string(numObj));
+	
 	for (var i = 0; i < numObj; i++) {
 		var obj = ds_list_find_value(objectsToRotate, i);
 		with (obj) {
 			rotate_object(isClockwise);
 		}
 	}
-	// Rotate only the elements in the layer (room) that player is currently in
-	//var currRoomLayerId = layer_get_id(global.currentRoomName);
-	//var roomElements = layer_get_all_elements(currRoomLayerId);
-	//// Rotate all elements in the layer
-	//for (var i = 0; i < array_length(roomElements); i++;) {
-	//	var inst = layer_instance_get_instance(roomElements[i]);
-	//	with (inst) {
-	//		rotate_object(isClockwise);
-	//	}
-	//}
+
 	// Lock or unlock doors if necessary
 	with (obj_door) {
 		check_door_lock();	
@@ -50,6 +40,7 @@ function rotate_player(isClockwise) {
 			return;
 		}
 	}
+	
 	// Rotate player
 	rotate_object(isClockwise);
 	// Move player if collide with wall/platform after rotating
@@ -57,6 +48,7 @@ function rotate_player(isClockwise) {
 	var tileCentres = get_tile_center(x, y);
 	var tileCenterX = tileCentres[0];
 	var tileCenterY = tileCentres[1];
+	
 	if (!has_collision(tileCenterX, tileCenterY)) {
 		// No collision, assign player to the center of current tile
 		x = tileCenterX;

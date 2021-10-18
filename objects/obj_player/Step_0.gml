@@ -71,13 +71,13 @@ draw_self();
 		// Move up only if there is a beanstalk above
 		if (keyboard_check(vk_up)) {
 			if (place_meeting(x, y - global.tileSize, obj_beanstalk)) {
-				apply_vertical_movement(-horizontalSpeed);
+				apply_vertical_movement(-climbingSpeed);
 			}
 		}
 		
 		// Move down
 		if (keyboard_check(vk_down)) {
-			apply_vertical_movement(horizontalSpeed);
+			apply_vertical_movement(climbingSpeed);
 		}
 	}
 
