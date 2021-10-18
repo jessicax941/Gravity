@@ -1,9 +1,22 @@
-// Called when Z (anti-clockwise) or X (clockwise) is pressed
+function can_rotate() {
+	show_debug_message("can rotate " + object_get_name(object_index));
+	with (obj_player) {
+		
+		show_debug_message("is grounded: " + string(isGrounded));
+		show_debug_message("is not grounded and on beanstalk: " + string(!isGrounded && place_meeting(x, y, obj_beanstalk)));
+		return (isGrounded || (!isGrounded && place_meeting(x, y, obj_beanstalk)));
+	}
+}
+
+// Called when Z (anti-clockwise) or X (clockwise) is pressed, called from the player
 function on_rotate(isClockwise) {
-	//var rotation = isClockwise ? -90 : 90;
-	//global.rotationAngle = (global.rotationAngle + rotation) % 360;
-	rotate_room(isClockwise);
-	rotate_player(isClockwise);
+	if (can_rotate()) {
+		//show_debug_message("can rotate room");
+		global.isRotating = true;
+		rotate_room(isClockwise);
+		rotate_player(isClockwise);
+		global.isRotating = false;
+	}
 }
 
 // Called from player 
@@ -27,10 +40,12 @@ function rotate_room(isClockwise) {
 }
 
 function rotate_player(isClockwise) {
-	//// Don't rotate player if on beanstalk
-	//if (place_meeting(x, y, obj_beanstalk)) {
-	//	return;
-	//}
+	// Don't rotate player if on beanstalk
+	with (obj_player) {
+		if (place_meeting(x, y, obj_beanstalk)) {
+			return;
+		}
+	}
 	
 	// Rotate player
 	rotate_object(isClockwise);
@@ -84,14 +99,18 @@ function rotate_object(isClockwise) {
 function rotate_plant(isClockwise) {
 	var roomInst = instance_place(x, y, obj_room);
 	if (roomInst != noone) {
-		//var plantIsInSameRoom = roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY;
-		//var canRotate = obj_player.isGrounded || (!obj_player.isGrounded && place_meeting(obj_player.x, obj_player.y, obj_beanstalk));
-		//if (plantIsInSameRoom && canRotate) {
-		//	rotate_object(isClockwise);	
-		//}
-		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY) {
+		if (roomInst.x == global.roomCenterX && roomInst.y == global.roomCenterY && can_rotate()) {
 			// Plant is in the room that player is in
+			var prevX = x;
+			var prevY = y;
 			rotate_object(isClockwise);
+			if (object_index == obj_beanstalk && place_meeting(prevX, prevY, obj_player)) {
+				// Is a beanstalk that is attached to the player
+				show_debug_message("player before: " + string(obj_player.x) + " ," + string(obj_player.y));
+				obj_player.x = x;
+				obj_player.y = y;
+				show_debug_message("player after rotating beanstalk: " + string(obj_player.x) + " ," + string(obj_player.y));
+			}
 		}
 	}
 }

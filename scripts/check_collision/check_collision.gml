@@ -25,9 +25,12 @@ function has_rect_collision(x1, y1, x2, y2) {
 				hasCollision = true;	
 				break;
 			}
-			//show_debug_message("collision for " + object_get_name(objectToCheck) + ": " + string(hasCollision));
 		}
 	}
 	
 	return hasCollision;
+}
+
+function is_player_on_beanstalk() {
+	return place_meeting(obj_player.x, obj_player.y, obj_beanstalk);
 }
