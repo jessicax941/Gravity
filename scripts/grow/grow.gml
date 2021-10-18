@@ -1,6 +1,5 @@
 function grow_plant(obj, xx, yy) {
 	var plant = instance_create_layer(xx, yy, global.roomId.layer, obj);
-	show_debug_message("layer: " + layer_get_name(global.roomId.layer));
 	// Make sure plant spawns in front
 	//var currRoomLayerId = global.roomId.layer;
 	plant.depth = global.roomId.depth - 1;
