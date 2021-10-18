@@ -5,7 +5,7 @@ if (horizontalSpeed != 0) {
 draw_self();
 
 #region GRAVITY AND VERTICAL COLLISION
-	// Check if collision object is colliding with player and assign vertical speed
+	// Check if collision object is colliding with player feet and assign vertical speed
 	if (!has_rect_collision(bbox_left, y + sprite_yoffset - 1, bbox_right, y + sprite_yoffset + 1)) {
 		// No collision found
 		isGrounded = false;
@@ -16,7 +16,7 @@ draw_self();
 	}
 
 	// Apply gravity only when not rotating and not entirely on a beanstalk
-	if (!global.isRotating && !position_meeting(x, y - sprite_yoffset, obj_beanstalk)) {
+	if (!global.isRotating && !position_meeting(x, bbox_top, obj_beanstalk)) {
 		// Apply gravity with collision
 		if (has_collision(x, y + vertSpeed)) {
 			// There is collision where player wants to go
@@ -35,33 +35,6 @@ draw_self();
 		}
 	}
 
-#endregion
-
-#region GROW BEANSTALK
-	var watermelon = collision_circle(x, y, interactionRadius, obj_watermelon, false, true);
-	
-	if (watermelon) {
-		//draw_set_colour(c_white);
-		//draw_circle(x, y, 50, true);
-		//draw_circle_colour(x, y, 100, c_white, c_red, true);
-		var interactPressed = keyboard_check_pressed(vk_space);
-		
-		if (interactPressed) {
-			var beanstalk = grow_plant(obj_beanstalk, watermelon.x, watermelon.y);
-			with (watermelon) {
-				instance_destroy();
-			}
-			
-			var tileAboveY = get_tile_center(beanstalk.x, beanstalk.y - global.tileSize)[1];
-			
-			// Grow the other beanstalks until hit a collision object
-			while (!has_collision(beanstalk.x, tileAboveY)) {
-				// The tile above has no collision objects
-				grow_plant(obj_beanstalk, beanstalk.x, tileAboveY);
-				tileAboveY = get_tile_center(beanstalk.x, tileAboveY - global.tileSize)[1];
-			}	
-		}
-	}
 #endregion
 
 #region MOVE ALONG BEANSTALK

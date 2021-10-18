@@ -17,8 +17,8 @@ function on_rotate(isClockwise) {
 // Called from player 
 function rotate_room(isClockwise) {
 	var objectsToRotate = ds_list_create();
-	var numObj = collision_rectangle_list(global.roomId.bbox_left - global.tileSize, global.roomId.bbox_top - global.tileSize, 
-		global.roomId.bbox_right + global.tileSize, global.roomId.bbox_bottom + global.tileSize, all, false, true, objectsToRotate, true);
+	var numObj = collision_rectangle_list(global.roomId.bbox_left - global.tileSize/2, global.roomId.bbox_top - global.tileSize/2, 
+		global.roomId.bbox_right + global.tileSize/2, global.roomId.bbox_bottom + global.tileSize/2, all, false, true, objectsToRotate, true);
 	
 	for (var i = 0; i < numObj; i++) {
 		var obj = ds_list_find_value(objectsToRotate, i);
