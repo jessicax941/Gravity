@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_closed_door",
-    "path": "sprites/spr_closed_door/spr_closed_door.yy",
+    "name": "spr_open_door",
+    "path": "sprites/spr_open_door/spr_open_door.yy",
   },
   "solid": false,
   "visible": true,
