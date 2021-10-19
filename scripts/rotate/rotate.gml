@@ -8,8 +8,15 @@ function can_rotate() {
 function on_rotate(isClockwise) {
 	if (can_rotate()) {
 		global.isRotating = true;
+		var beanstalkAttachedToPlayer = instance_place(x, y, obj_beanstalk);
+		
 		rotate_room(isClockwise);
 		rotate_player(isClockwise);
+		// Maintain player's position if was on a beanstalk
+		if (beanstalkAttachedToPlayer != noone) {
+			obj_player.x = beanstalkAttachedToPlayer.x;
+			obj_player.y = beanstalkAttachedToPlayer.y;
+		}
 		global.isRotating = false;
 	}
 }
@@ -18,7 +25,7 @@ function on_rotate(isClockwise) {
 function rotate_room(isClockwise) {
 	var objectsToRotate = ds_list_create();
 	var numObj = collision_rectangle_list(global.roomId.bbox_left - global.tileSize/2, global.roomId.bbox_top - global.tileSize/2, 
-		global.roomId.bbox_right + global.tileSize/2, global.roomId.bbox_bottom + global.tileSize/2, all, false, true, objectsToRotate, true);
+		global.roomId.bbox_right + global.tileSize/2, global.roomId.bbox_bottom + global.tileSize/2, all, false, true, objectsToRotate, true); // player is excluded
 	
 	for (var i = 0; i < numObj; i++) {
 		var obj = ds_list_find_value(objectsToRotate, i);
@@ -35,11 +42,11 @@ function rotate_room(isClockwise) {
 
 function rotate_player(isClockwise) {
 	// Don't rotate player if on beanstalk
-	with (obj_player) {
-		if (place_meeting(x, y, obj_beanstalk)) {
-			return;
-		}
-	}
+	//with (obj_player) {
+	//	if (place_meeting(x, y, obj_beanstalk)) {
+	//		return;
+	//	}
+	//}
 	
 	// Rotate player
 	rotate_object(isClockwise);
@@ -67,8 +74,10 @@ function rotate_player(isClockwise) {
 	}
 }
 
-// Runs from objects in room layer
+// Runs from objects
 function rotate_object(isClockwise) {
+	//var prevX = x;
+	//var prevY = y;
 	var rotation = isClockwise ? -90 : 90;
 
 	// Rotate around centre of room
@@ -85,21 +94,21 @@ function rotate_object(isClockwise) {
 	if (object_index != obj_player && object_index != obj_watermelon) {
 		image_angle += rotation;
 	}
+	
 }
-
-function rotate_plant(isClockwise) {
-	var roomInst = instance_place(x, y, obj_room);
-	if (roomInst != noone) {
-		if (roomInst.x == global.roomId.x && roomInst.y == global.roomId.y && can_rotate()) {
-			// Plant is in the room that player is in
-			var prevX = x;
-			var prevY = y;
-			//rotate_object(isClockwise);
-			if (object_index == obj_beanstalk && place_meeting(prevX, prevY, obj_player)) {
-				// Is a beanstalk that is attached to the player
-				obj_player.x = x;
-				obj_player.y = y;
-			}
-		}
-	}
-}
+//function rotate_plant(isClockwise) {
+//	var roomInst = instance_place(x, y, obj_room);
+//	if (roomInst != noone) {
+//		if (roomInst.x == global.roomId.x && roomInst.y == global.roomId.y && can_rotate()) {
+//			// Plant is in the room that player is in
+//			var prevX = x;
+//			var prevY = y;
+//			//rotate_object(isClockwise);
+//			if (object_index == obj_beanstalk && place_meeting(prevX, prevY, obj_player)) {
+//				// Is a beanstalk that is attached to the player
+//				obj_player.x = x;
+//				obj_player.y = y;
+//			}
+//		}
+//	}
+//}
