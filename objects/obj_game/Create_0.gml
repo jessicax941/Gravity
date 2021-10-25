@@ -17,3 +17,10 @@ smallFont = smallText;
 
 options = ["Start", "Options", "Quit"];
 pos = 0;
+
+vw = camera_get_view_width(view_camera[0]); 
+vh = camera_get_view_height(view_camera[0]);
+
+hasSeenHowToPlay = false;
+howToPlay = ["Goal: Escape from each level's labyrinth by\nrotating rooms, growing plants\nand finding the exit.",
+				"Move: Arrow keys", "Rotate clockwise: D", "Rotate anticlockwise: A", "Restart level: R"];
