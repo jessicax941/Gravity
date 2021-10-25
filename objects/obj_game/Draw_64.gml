@@ -6,21 +6,23 @@ switch (room) {
 		draw_set_font(titleFont);
 		draw_text_color(vw/2, vh/4, "Gravitropism", c_white, c_white, c_white, c_white, 1);
 		
-		draw_set_font(smallFont);
-		draw_text_color(vw/2, vh/2 - 64, "PRESS ENTER TO CONFIRM", c_white, c_white, c_white, c_white, 1);
-		
 		// Menu options
 		draw_set_font(textFont);
 		var spacing = 16;
+		var drawY = 0;
 		for (var i = 0; i < array_length(options); i++) {
 			var color = c_white;
 			var optionStr = options[i];
+			drawY = vh/2 + i * (string_height(optionStr) + spacing);
 			if (pos == i) {
 				color = c_lime;
-				draw_text_color(vw/2 - string_width(optionStr), vh/2 + i * (string_height(optionStr) + spacing), ">", color, color, color, color, 1);
+				draw_text_color(vw/2 - string_width(optionStr), drawY, ">", color, color, color, color, 1);
 			}
-			draw_text_color(vw/2, vh/2 + i * (string_height(optionStr) + spacing), optionStr, color, color, color, color, 1);
-		}	
+			draw_text_color(vw/2, drawY, optionStr, color, color, color, color, 1);
+		}
+		
+		draw_set_font(smallFont);
+		draw_text_color(vw/2, drawY + 80, "CONFIRM [ENTER]", c_white, c_white, c_white, c_white, 1);
 		break;
 		
 	case rm_howtoplay:
@@ -28,7 +30,7 @@ switch (room) {
 		draw_set_valign(fa_top);
 		draw_set_font(titleFont);
 		var c = c_white;
-		var startY = vh/4 - 100;
+		var startY = vh/4 - 120;
 		draw_text_color(vw/2, startY, "How To Play", c, c, c, c, 1);
 		var nextY = startY + string_height("How To Play") + 40;
 		draw_set_font(textFont);
@@ -39,7 +41,7 @@ switch (room) {
 			if (i == 0) { nextY += 20 }
 		}
 		draw_set_font(smallFont);
-		draw_text_color(vw/2, nextY + 40, "PRESS ENTER TO PLAY", c, c, c, c, 1);
+		draw_text_color(vw/2, nextY + 40, "PLAY [ENTER]", c, c, c, c, 1);
 		break;
 		
 	default: // All the levels

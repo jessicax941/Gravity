@@ -40,7 +40,6 @@ function apply_gravity() {
 	var collisionWithWall = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_wall, false, false) 
 	var collisionWithPlatform = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_platform, false, false);
 	var collisionWithPlayer = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_player, false, false);
-
 	var gravityValue = obj_player.gravityValue;
 	var vertSpeed;
 

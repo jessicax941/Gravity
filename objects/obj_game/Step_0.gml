@@ -2,7 +2,7 @@ up_key = keyboard_check_pressed(vk_up);
 down_key = keyboard_check_pressed(vk_down);
 enter_key = keyboard_check_pressed(vk_enter);
 
-// CHEATS
+// CHEATS; comment out if playtesting
 if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
 if (keyboard_check_pressed(ord("2"))) { room_goto(rm_level2); }
 if (keyboard_check_pressed(ord("3"))) { room_goto(rm_level3); }
