@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},"order":18,},
     {"id":{"name":"rm_level3","path":"rooms/rm_level3/rm_level3.yy",},"order":3,},
     {"id":{"name":"obj_walls_horz","path":"objects/obj_walls_horz/obj_walls_horz.yy",},"order":12,},
     {"id":{"name":"spr_open_door","path":"sprites/spr_open_door/spr_open_door.yy",},"order":12,},
@@ -23,6 +24,7 @@
     {"id":{"name":"obj_corridor","path":"objects/obj_corridor/obj_corridor.yy",},"order":5,},
     {"id":{"name":"spr_walls_horz","path":"sprites/spr_walls_horz/spr_walls_horz.yy",},"order":5,},
     {"id":{"name":"obj_open_door","path":"objects/obj_open_door/obj_open_door.yy",},"order":15,},
+    {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},"order":6,},
     {"id":{"name":"rotate","path":"scripts/rotate/rotate.yy",},"order":2,},
     {"id":{"name":"obj_plant_sapling","path":"objects/obj_plant_sapling/obj_plant_sapling.yy",},"order":8,},
     {"id":{"name":"spr_room_bg","path":"sprites/spr_room_bg/spr_room_bg.yy",},"order":8,},
@@ -63,6 +65,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"roomId":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
     {"roomId":{"name":"rm_level2","path":"rooms/rm_level2/rm_level2.yy",},},
     {"roomId":{"name":"rm_level3","path":"rooms/rm_level3/rm_level3.yy",},},
@@ -91,7 +94,11 @@
   "TextureGroups": [
     {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"Itim-Regular.ttf","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"ZenKurenaido-Regular.ttf","resourceType":"GMIncludedFile",},
+    {"CopyToMask":3035461389054378222,"filePath":"datafiles","resourceVersion":"1.0","name":"orange_kid.ttf","resourceType":"GMIncludedFile",},
+  ],
   "MetaData": {
     "IDEVersion": "2.3.5.589",
   },
