@@ -1,4 +1,11 @@
 function can_rotate() {
+	// First check if watermelons are grounded, if any of them are not grounded, cannot rotate
+	if (instance_exists(obj_watermelon)) {
+		with (obj_watermelon) {
+			if (!isMelonGrounded) { return false };
+		}
+	}
+	// All watermelons are grounded, now check for player
 	with (obj_player) {
 		return (isGrounded || (!isGrounded && place_meeting(x, y, obj_beanstalk)));
 	}
@@ -42,14 +49,7 @@ function rotate_room(isClockwise) {
 	}
 }
 
-function rotate_player(isClockwise) {
-	// Don't rotate player if on beanstalk
-	//with (obj_player) {
-	//	if (place_meeting(x, y, obj_beanstalk)) {
-	//		return;
-	//	}
-	//}
-	
+function rotate_player(isClockwise) {	
 	// Rotate player
 	rotate_object(isClockwise);
 	// Move player if collide with wall/platform after rotating
@@ -78,8 +78,6 @@ function rotate_player(isClockwise) {
 
 // Runs from objects
 function rotate_object(isClockwise) {
-	//var prevX = x;
-	//var prevY = y;
 	var rotation = isClockwise ? -90 : 90;
 
 	// Rotate around centre of room
@@ -98,19 +96,3 @@ function rotate_object(isClockwise) {
 	}
 	
 }
-//function rotate_plant(isClockwise) {
-//	var roomInst = instance_place(x, y, obj_room);
-//	if (roomInst != noone) {
-//		if (roomInst.x == global.roomId.x && roomInst.y == global.roomId.y && can_rotate()) {
-//			// Plant is in the room that player is in
-//			var prevX = x;
-//			var prevY = y;
-//			//rotate_object(isClockwise);
-//			if (object_index == obj_beanstalk && place_meeting(prevX, prevY, obj_player)) {
-//				// Is a beanstalk that is attached to the player
-//				obj_player.x = x;
-//				obj_player.y = y;
-//			}
-//		}
-//	}
-//}

@@ -35,22 +35,21 @@ function apply_vertical_movement(spd) {
 	}
 }
 
-// For objects with gravity (excluding player)
+// For watermelon
 function apply_gravity() {
 	var collisionWithWall = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_wall, false, false) 
 	var collisionWithPlatform = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_platform, false, false);
 	var collisionWithPlayer = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_player, false, false);
 
-	var isGrounded = false; 
 	var gravityValue = obj_player.gravityValue;
 	var vertSpeed;
 
 	if (collisionWithWall == noone && collisionWithPlatform == noone && collisionWithPlayer == noone) {
 		// No collision found	
-		isGrounded = false;
+		isMelonGrounded = false;
 		vertSpeed = gravityValue;
 	} else {
-		isGrounded = true;
+		isMelonGrounded = true;
 		vertSpeed = 0;
 	}
 
