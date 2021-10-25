@@ -2,6 +2,13 @@ up_key = keyboard_check_pressed(vk_up);
 down_key = keyboard_check_pressed(vk_down);
 enter_key = keyboard_check_pressed(vk_enter);
 
+// CHEATS
+if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
+if (keyboard_check_pressed(ord("2"))) { room_goto(rm_level2); }
+if (keyboard_check_pressed(ord("3"))) { room_goto(rm_level3); }
+if (keyboard_check_pressed(ord("4"))) { room_goto(rm_level4); }
+if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
+
 if (room == rm_start) {
 	pos += (down_key - up_key);
 	if (pos < 0) {
@@ -28,7 +35,6 @@ if (room == rm_start) {
 			case "Quit":
 				game_end();
 				break;
-		
 		}
 	}
 }
@@ -39,3 +45,4 @@ if (room == rm_howtoplay) {
 		room_goto_next();
 	}
 }
+

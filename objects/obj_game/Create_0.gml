@@ -24,5 +24,5 @@ vh = camera_get_view_height(view_camera[0]);
 hasSeenHowToPlay = false;
 howToPlay = ["Goal: Escape from each level's labyrinth by\nrotating rooms, growing plants\nand finding the exit.",
 				"Move: Arrow keys", "Rotate clockwise: D", "Rotate anticlockwise: A", "Restart level: R"];
-				
+
 totalRotations = 0;
