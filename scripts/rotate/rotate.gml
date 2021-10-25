@@ -17,6 +17,8 @@ function on_rotate(isClockwise) {
 			obj_player.x = beanstalkAttachedToPlayer.x;
 			obj_player.y = beanstalkAttachedToPlayer.y;
 		}
+		
+		with (obj_game) { numRotations++; }
 		global.isRotating = false;
 	}
 }

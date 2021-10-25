@@ -48,13 +48,26 @@ switch (room) {
 		draw_set_font(textFont);
 		var c = c_white;
 		var startingX = 20;
-		var drawY = 5;
+		var drawY = 20;
 		
-		// Level counter
+		// Level counter with dark gray bg (left right)
 		var currentLevel = string_char_at(room_get_name(room), string_length(room_get_name(room)));
 		var lastLevel = string_char_at(room_get_name(room_last), string_length(room_get_name(room_last)));
 		var levelCounter = "Level " + currentLevel + " / " + lastLevel;
+		var spacing = 10;
+		draw_rectangle_color(startingX - spacing, drawY - spacing/2, startingX + string_width(levelCounter) + spacing, 
+			drawY + string_height(levelCounter) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
 		draw_text_color(startingX, drawY, levelCounter, c, c, c, c, 1);
+		
+		// Number of rotations with dark grey bg (top right)
+		c = c_white;
+		var rotationsText = "Rotations: " + string(numRotations);
+		var rotationsX = vw - string_width(rotationsText) - spacing*2;
+		var rotationsY = 20;
+		draw_rectangle_color(rotationsX - spacing, rotationsY - spacing/2, rotationsX + string_width(rotationsText) + spacing, 
+			drawY + string_height(levelCounter) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
+		draw_text_color(rotationsX, rotationsY, rotationsText, c, c, c, c, 1);
+		
 		
 		// Controls
 		//var prevWidth = string_width(levelCounter);
@@ -68,4 +81,3 @@ switch (room) {
 		
 		break;
 }
-
