@@ -16,6 +16,7 @@ textFont = pixelText;
 smallFont = smallText;
 
 options = ["Start", "Options", "Quit"];
+menuSprites = [spr_btn_start, spr_btn_options, spr_btn_quit];
 pos = 0;
 
 vw = camera_get_view_width(view_camera[0]); 
@@ -26,3 +27,5 @@ howToPlay = ["Goal: Escape from each level's labyrinth by\nrotating rooms, growi
 				"Move: Arrow keys", "Rotate clockwise: D", "Rotate anticlockwise: A", "Grow plants: Space", "Restart level: R"];
 
 totalRotations = 0;
+
+audio_play_sound(m_bgm, 1, true);

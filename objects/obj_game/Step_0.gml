@@ -20,8 +20,8 @@ if (room == rm_start) {
 	}
 
 	if (enter_key) {
-		switch (options[pos]) {
-			case "Start":
+		switch (pos) {
+			case 0: // Start
 				if (!hasSeenHowToPlay) {	
 					room_goto_next();
 				} else {
@@ -29,10 +29,10 @@ if (room == rm_start) {
 				}
 				break;
 		
-			case "Options":
+			case 1: // Options
 				break;
 		
-			case "Quit":
+			case 2: // Quit
 				game_end();
 				break;
 		}
