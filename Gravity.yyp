@@ -46,6 +46,7 @@
     {"id":{"name":"check_collision","path":"scripts/check_collision/check_collision.yy",},"order":1,},
     {"id":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"order":1,},
     {"id":{"name":"spr_watermelon","path":"sprites/spr_watermelon/spr_watermelon.yy",},"order":9,},
+    {"id":{"name":"spr_howtoplay","path":"sprites/spr_howtoplay/spr_howtoplay.yy",},"order":11,},
     {"id":{"name":"spr_level1_5","path":"sprites/spr_level1_5/spr_level1_5.yy",},"order":2,},
     {"id":{"name":"obj_exit","path":"objects/obj_exit/obj_exit.yy",},"order":7,},
     {"id":{"name":"obj_watermelon_sapling","path":"objects/obj_watermelon_sapling/obj_watermelon_sapling.yy",},"order":9,},

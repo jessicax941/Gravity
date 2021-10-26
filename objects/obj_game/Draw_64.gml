@@ -35,21 +35,21 @@ switch (room) {
 		
 	case rm_howtoplay:
 		draw_set_halign(fa_center);
-		draw_set_valign(fa_top);
-		draw_set_font(titleFont);
+		draw_set_valign(fa_center);
+		//draw_set_font(titleFont);
 		var c = c_white;
-		var startY = vh/4 - 120;
-		draw_text_color(vw/2, startY, "How To Play", c, c, c, c, 1);
-		var nextY = startY + string_height("How To Play") + 40;
-		draw_set_font(textFont);
-		for (var i = 0; i < array_length(howToPlay); i++) {
-			draw_text_color(vw/2, nextY, howToPlay[i], c, c, c, c, 1);
-			var textHeight = string_height(howToPlay[i]);
-			nextY += textHeight;
-			if (i == 0) { nextY += 20 }
-		}
+		//var startY = vh/4 - 120;
+		//draw_text_color(vw/2, startY, "How To Play", c, c, c, c, 1);
+		//var nextY = startY + string_height("How To Play") + 40;
+		//draw_set_font(textFont);
+		//for (var i = 0; i < array_length(howToPlay); i++) {
+		//	draw_text_color(vw/2, nextY, howToPlay[i], c, c, c, c, 1);
+		//	var textHeight = string_height(howToPlay[i]);
+		//	nextY += textHeight;
+		//	if (i == 0) { nextY += 20 }
+		//}
 		draw_set_font(smallFont);
-		draw_text_color(vw/2, nextY + 40, "PLAY [ENTER]", c, c, c, c, 1);
+		draw_text_color(565, 758, "PLAY [ENTER]", c, c, c, c, 1);
 		break;
 		
 	default: // All the levels
