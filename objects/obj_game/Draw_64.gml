@@ -1,34 +1,24 @@
+var drawX = 0;
+var drawY = 0;
+
 switch (room) {
 	case rm_start:
-		draw_set_halign(fa_center);
-		draw_set_valign(fa_center);
-		// Game title
-		draw_set_font(titleFont);
-		//draw_text_color(vw/2, vh/4, "Gravitropism", c_white, c_white, c_white, c_white, 1);
-		//draw_sprite(spr_main_menu, 0, 0, 0);
-
 		// Menu options
 		draw_set_font(textFont);
 		var spacing = 16;
-		var drawX = 0;
-		var drawY = vh/2 - 100;
+		drawX = 0;
+		drawY = vh/2 - 100;
 		for (var i = 0; i < array_length(options); i++) {
 			var sprite = menuSprites[i];
-			var color = c_white;
-			var optionStr = options[i];
-			//drawY = vh/2 + i * (string_height(optionStr) + spacing);
+			var c = c_orange;
 			drawX = vw/2 - sprite_get_width(sprite)/2;
 			drawY += (sprite_get_height(sprite) + spacing);
-			if (pos == i) {
-				color = c_white;
-				draw_text_color(drawX - 30, drawY + sprite_get_height(sprite)/2, ">", color, color, color, color, 1);
-			}
+			if (pos == i) { draw_text_color(drawX - 30, drawY + sprite_get_height(sprite)/2, ">", c, c, c, c, 1); }
 			draw_sprite(sprite, 0, drawX, drawY);
-			//draw_text_color(vw/2, drawY, optionStr, color, color, color, color, 1);
 		}
 		
-		
-		
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_center);
 		draw_set_font(smallFont);
 		draw_text_color(vw/2, drawY + 100, "CONFIRM [ENTER]", c_white, c_white, c_white, c_white, 1);
 		break;
@@ -36,66 +26,34 @@ switch (room) {
 	case rm_howtoplay:
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		//draw_set_font(titleFont);
 		var c = c_white;
-		//var startY = vh/4 - 120;
-		//draw_text_color(vw/2, startY, "How To Play", c, c, c, c, 1);
-		//var nextY = startY + string_height("How To Play") + 40;
-		//draw_set_font(textFont);
-		//for (var i = 0; i < array_length(howToPlay); i++) {
-		//	draw_text_color(vw/2, nextY, howToPlay[i], c, c, c, c, 1);
-		//	var textHeight = string_height(howToPlay[i]);
-		//	nextY += textHeight;
-		//	if (i == 0) { nextY += 20 }
-		//}
 		draw_set_font(smallFont);
 		draw_text_color(565, 758, "PLAY [ENTER]", c, c, c, c, 1);
 		break;
 		
 	default: // All the levels
-		draw_set_halign(fa_left);
-		draw_set_valign(fa_top);
-		draw_set_font(textFont);
 		var c = c_white;
-		var startingX = 20;
-		var drawY = 20;
+		drawX = 20;
+		drawY = 20;
 		var spacing = 10;
 		
 		// Level counter with dark gray bg (left right)
 		var currentLevel = string_char_at(room_get_name(room), string_length(room_get_name(room)));
-		draw_rectangle_color(startingX - spacing, drawY - spacing/2, startingX + sprite_get_width(spr_level1_5) + spacing, 
+		draw_rectangle_color(drawX - spacing, drawY - spacing/2, drawX + sprite_get_width(spr_level1_5) + spacing, 
 			drawY + sprite_get_height(spr_level1_5) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
-		if (currentLevel == 1) {
-			draw_sprite(spr_level1_5, 0, startingX, drawY);
-		}
-		if (currentLevel == 2) {
-			draw_sprite(spr_level2_5, 0, startingX, drawY);
-		}
-		if (currentLevel == 3) {
-			draw_sprite(spr_level3_5, 0, startingX, drawY);
-		}
-		if (currentLevel == 4) {
-			draw_sprite(spr_level4_5, 0, startingX, drawY);
-		}
-		if (currentLevel == 5) {
-			draw_sprite(spr_level5_5, 0, startingX, drawY);
-		}
-		//var lastLevel = string_char_at(room_get_name(room_last), string_length(room_get_name(room_last)));
-		//var levelCounter = "Level " + currentLevel + " / " + lastLevel;
-		
-		
-		//draw_text_color(startingX, drawY, levelCounter, c, c, c, c, 1);
-		
+		var levelSprite = levelSprites[currentLevel - 1];
+		draw_sprite(levelSprite, 0, drawX, drawY);
 
 		// Number of rotations with dark grey bg (top right)
-		c = c_white;
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
+		draw_set_font(smallFont);
 		var rotationsText = "Rotations: " + string(numRotations);
 		var rotationsX = vw - string_width(rotationsText) - spacing*2;
 		var rotationsY = 20;
 		draw_rectangle_color(rotationsX - spacing, rotationsY - spacing/2, rotationsX + string_width(rotationsText) + spacing, 
 			drawY + string_height(rotationsText) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
 		draw_text_color(rotationsX, rotationsY, rotationsText, c, c, c, c, 1);
-		
 		
 		// Controls
 		//var prevWidth = string_width(levelCounter);
@@ -106,6 +64,5 @@ switch (room) {
 		//	draw_text_color(nextX, drawY, controls[i], c, c, c, c, 1);
 		//	nextX += string_width(controls[i]) + 20;
 		//}
-		
 		break;
 }
