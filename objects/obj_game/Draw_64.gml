@@ -8,7 +8,7 @@ switch (room) {
 		var spacing = 16;
 		drawX = 0;
 		drawY = vh/2 - 100;
-		for (var i = 0; i < array_length(options); i++) {
+		for (var i = 0; i < array_length(menuSprites); i++) {
 			var sprite = menuSprites[i];
 			var c = c_orange;
 			drawX = vw/2 - sprite_get_width(sprite)/2;
@@ -26,9 +26,12 @@ switch (room) {
 	case rm_howtoplay:
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		var c = c_white;
 		draw_set_font(smallFont);
-		draw_text_color(565, 758, "PLAY [ENTER]", c, c, c, c, 1);
+		var c = c_white;
+		var textToDisplay = "";
+		if (menuSprites[pos] == spr_btn_start) { textToDisplay = howToPlayFromStart; }
+		if (menuSprites[pos] == spr_btn_instructions) { textToDisplay = howToPlayFromInstructions; }
+		draw_text_color(565, 758, textToDisplay, c, c, c, c, 1);
 		break;
 		
 	default: // All the levels
