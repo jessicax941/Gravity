@@ -34,41 +34,46 @@ switch (room) {
 		draw_text_color(570, 760, textToDisplay, c, c, c, c, 1);
 		break;
 		
-	default: // All the levels
-		var c = c_white;
+	case rm_level1:
+	case rm_level2:
+	case rm_level3:
+	case rm_level4:
+	case rm_level5:
+	case rm_level6:
 		drawX = 20;
 		drawY = 20;
-		var spacing = 10;
 		
-		// Level counter with dark gray bg (left right)
+		// Top bar background
+		//var bgC = make_color_rgb(91, 56, 13); // Dark brown
+		var bgC = c_dkgray;
+		draw_rectangle_color(0, 0, vw, global.tileSize*2, bgC, bgC, bgC, bgC, false);
+		
+		// Level counter (left right)
 		var currentLevel = string_char_at(room_get_name(room), string_length(room_get_name(room)));
-		
 		if (currentLevel > 0 && currentLevel < 6) {
-			draw_rectangle_color(drawX - spacing, drawY - spacing/2, drawX + sprite_get_width(spr_level1_5) + spacing, 
-				drawY + sprite_get_height(spr_level1_5) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
 			var levelSprite = levelSprites[currentLevel - 1];
 			draw_sprite(levelSprite, 0, drawX, drawY);
 		}
 		
-		// Number of rotations with dark grey bg (top right)
+		// Controls
+		var hSpacing = 50;
+		var keyY = drawY + 12;
+		var imageScale = 1;
+		var qKeyX = drawX + sprite_get_width(spr_level1_5) + hSpacing;
+		draw_sprite_ext(spr_key_q, 0, qKeyX, keyY, imageScale, imageScale, 0, c_white, 1);
+		var eKeyX = qKeyX + sprite_get_width(spr_key_e)*imageScale + hSpacing/2;
+		draw_sprite_ext(spr_key_e, 0, eKeyX, keyY, imageScale, imageScale, 0, c_white, 1);
+		
+		// Number of rotations (top right)
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		draw_set_font(smallFont);
+		var spacing = 10;
+		var c = c_white;
 		var rotationsText = "Rotations: " + string(numRotations);
 		var rotationsX = vw - string_width(rotationsText) - spacing*2;
 		var rotationsY = 20;
-		draw_rectangle_color(rotationsX - spacing, rotationsY - spacing/2, rotationsX + string_width(rotationsText) + spacing, 
-			drawY + string_height(rotationsText) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
 		draw_text_color(rotationsX, rotationsY, rotationsText, c, c, c, c, 1);
 		
-		// Controls
-		//var prevWidth = string_width(levelCounter);
-		//draw_set_font(smallFont);
-		//var nextX = startingX + prevWidth + 40;
-		//var controls = ["Move: Arrow keys", "Rotate clockwise: D", "Rotate anticlockwise: A", "Restart level: R"];
-		//for (var i = 0; i < array_length(controls); i++) {
-		//	draw_text_color(nextX, drawY, controls[i], c, c, c, c, 1);
-		//	nextX += string_width(controls[i]) + 20;
-		//}
 		break;
 }
