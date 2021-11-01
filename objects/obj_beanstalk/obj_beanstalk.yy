@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "plants",
+    "path": "folders/Objects/plants.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_beanstalk",

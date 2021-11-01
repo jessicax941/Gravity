@@ -24,25 +24,37 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":{"name":"10c568d9-c372-44de-b3b1-0673c2ab8f5f","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d19a6fa6-0dfb-4a79-b56e-42461a73f283","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d19a6fa6-0dfb-4a79-b56e-42461a73f283","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":{"name":"daf1ef11-1cf9-48b3-90d1-d2558a4ba9f0","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"d19a6fa6-0dfb-4a79-b56e-42461a73f283","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8be7756b-9b2b-4463-9050-4cdc5bb78f32","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8be7756b-9b2b-4463-9050-4cdc5bb78f32","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":{"name":"daf1ef11-1cf9-48b3-90d1-d2558a4ba9f0","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"8be7756b-9b2b-4463-9050-4cdc5bb78f32","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"842581f2-5ec4-46a3-85bb-caf1381fc4d5","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"842581f2-5ec4-46a3-85bb-caf1381fc4d5","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":{"name":"daf1ef11-1cf9-48b3-90d1-d2558a4ba9f0","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"842581f2-5ec4-46a3-85bb-caf1381fc4d5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"354b1f18-16fc-4e1d-bf81-63d4e1a5cc6d","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"354b1f18-16fc-4e1d-bf81-63d4e1a5cc6d","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"LayerId":{"name":"daf1ef11-1cf9-48b3-90d1-d2558a4ba9f0","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","name":"354b1f18-16fc-4e1d-bf81-63d4e1a5cc6d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_watermelon_sapling","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 2.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 4.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"300f945c-bc57-4804-bdb4-b21161e81674","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f5a8df74-8d01-4f7b-97b3-3d2d1945aede","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"dbe6445c-1bf3-4b58-b6f9-cc9dfc105ffa","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d19a6fa6-0dfb-4a79-b56e-42461a73f283","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"bfe950a4-854c-47dc-b48e-b9485a334524","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8be7756b-9b2b-4463-9050-4cdc5bb78f32","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a31719b2-c6d8-44b8-aa45-a41cea16fee7","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"842581f2-5ec4-46a3-85bb-caf1381fc4d5","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"55eec029-e280-4f5b-a4ad-4e805adcf00f","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"354b1f18-16fc-4e1d-bf81-63d4e1a5cc6d","path":"sprites/spr_watermelon_sapling/spr_watermelon_sapling.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -65,12 +77,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"10c568d9-c372-44de-b3b1-0673c2ab8f5f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"daf1ef11-1cf9-48b3-90d1-d2558a4ba9f0","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "plants",
+    "path": "folders/Sprites/plants.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_watermelon_sapling",

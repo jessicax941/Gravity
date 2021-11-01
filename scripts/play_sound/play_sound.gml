@@ -45,10 +45,3 @@ function sfx_resume(sfx) {
 		audio_resume_sound(sfx);
 	}
 }
-
-function sfx_play_button_click() {
-	sfx_play(snd_button_click);
-}
-
-
-

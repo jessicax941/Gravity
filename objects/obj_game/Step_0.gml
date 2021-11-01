@@ -3,9 +3,9 @@ downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
 backspaceKey = keyboard_check_pressed(vk_backspace);
 escapeKey = keyboard_check_pressed(vk_escape);
-isAnyMenuKeyPressed = upKey || downKey || enterKey || backspaceKey || escapeKey;
+//isAnyMenuKeyPressed = upKey || downKey || enterKey || backspaceKey || escapeKey;
 
-// CHEATS; comment out if playtesting
+// CHEATS
 if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
 if (keyboard_check_pressed(ord("2"))) { room_goto(rm_level2); }
 if (keyboard_check_pressed(ord("3"))) { room_goto(rm_level3); }
@@ -14,7 +14,7 @@ if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
 
 if (room == rm_start) {
 	if (upKey || downKey || enterKey) {
-		sfx_play_button_click();
+		sfx_play(snd_button_click);
 	}
 
 	pos += (downKey - upKey);
@@ -47,7 +47,7 @@ if (room == rm_start) {
 
 if (room == rm_howtoplay) {
 	if (enterKey || backspaceKey) {
-		sfx_play_button_click();
+		sfx_play(snd_button_click);
 	}
 	
 	if (backspaceKey) {
