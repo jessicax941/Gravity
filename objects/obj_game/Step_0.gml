@@ -2,8 +2,10 @@ upKey = keyboard_check_pressed(vk_up);
 downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
 backspaceKey = keyboard_check_pressed(vk_backspace);
+escapeKey = keyboard_check_pressed(vk_escape);
+isAnyMenuKeyPressed = upKey || downKey || enterKey || backspaceKey || escapeKey;
 
-if (upKey || downKey || enterKey) {
+if (isAnyMenuKeyPressed) {
 	sfx_play_button_click();
 }
 
@@ -26,20 +28,16 @@ if (room == rm_start) {
 	if (enterKey) {
 		switch (menuSprites[pos]) {
 			case spr_btn_start: // Start
-				if (!hasSeenHowToPlay) {
-					room_goto(rm_howtoplay);
-				} else {
-					room_goto(rm_level1);
-				}
+				room_goto(rm_howtoplay);
 				break;
-				
 			case spr_btn_instructions: // Instructions
 				room_goto(rm_howtoplay);
 				break;
-		
 			case spr_btn_options: // Options
+				room_goto(rm_options);
 				break;
-		
+			case spr_btn_credits:
+				break;
 			case spr_btn_quit: // Quit
 				game_end();
 				break;
@@ -54,11 +52,9 @@ if (room == rm_howtoplay) {
 	
 	if (menuSprites[pos] == spr_btn_start) {
 		// Came from start button
-		hasSeenHowToPlay = true;
 		if (enterKey) {
 			room_goto(rm_level1);
 		}
 	}
-	
 }
 

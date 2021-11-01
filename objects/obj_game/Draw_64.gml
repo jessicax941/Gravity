@@ -31,7 +31,7 @@ switch (room) {
 		var textToDisplay = "";
 		if (menuSprites[pos] == spr_btn_start) { textToDisplay = howToPlayFromStart; }
 		if (menuSprites[pos] == spr_btn_instructions) { textToDisplay = howToPlayFromInstructions; }
-		draw_text_color(565, 758, textToDisplay, c, c, c, c, 1);
+		draw_text_color(570, 760, textToDisplay, c, c, c, c, 1);
 		break;
 		
 	default: // All the levels
