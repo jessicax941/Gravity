@@ -99,9 +99,6 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_closed_door","path":"objects/obj_closed_door/obj_closed_door.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1392.0,"y":688.0,"resourceVersion":"1.0","name":"inst_70FEBBC5","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_watermelon_sapling","path":"objects/obj_watermelon_sapling/obj_watermelon_sapling.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1296.0,"y":656.0,"resourceVersion":"1.0","name":"inst_5291824","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
-            {"propertyId":{"name":"dialogId","path":"objects/obj_dialog/obj_dialog.yy",},"objectId":{"name":"obj_dialog","path":"objects/obj_dialog/obj_dialog.yy",},"value":"d4","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"obj_dialog","path":"objects/obj_dialog/obj_dialog.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":896.0,"y":640.0,"resourceVersion":"1.0","name":"inst_D013E2B","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[
             {"propertyId":{"name":"dialogId","path":"objects/obj_dialog/obj_dialog.yy",},"objectId":{"name":"obj_dialog","path":"objects/obj_dialog/obj_dialog.yy",},"value":"d6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"obj_dialog","path":"objects/obj_dialog/obj_dialog.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1216.0,"y":640.0,"resourceVersion":"1.0","name":"inst_AED61B2","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_powerup_beanstalk","path":"objects/obj_powerup_beanstalk/obj_powerup_beanstalk.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":880.0,"y":656.0,"resourceVersion":"1.0","name":"inst_32EE913A","tags":[],"resourceType":"GMRInstance",},
@@ -191,7 +188,6 @@
     {"name":"inst_4E15BA48","path":"rooms/rm_level4/rm_level4.yy",},
     {"name":"inst_70FEBBC5","path":"rooms/rm_level4/rm_level4.yy",},
     {"name":"inst_5291824","path":"rooms/rm_level4/rm_level4.yy",},
-    {"name":"inst_D013E2B","path":"rooms/rm_level4/rm_level4.yy",},
     {"name":"inst_AED61B2","path":"rooms/rm_level4/rm_level4.yy",},
     {"name":"inst_32EE913A","path":"rooms/rm_level4/rm_level4.yy",},
   ],

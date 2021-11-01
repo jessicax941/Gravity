@@ -42,11 +42,14 @@ switch (room) {
 		
 		// Level counter with dark gray bg (left right)
 		var currentLevel = string_char_at(room_get_name(room), string_length(room_get_name(room)));
-		draw_rectangle_color(drawX - spacing, drawY - spacing/2, drawX + sprite_get_width(spr_level1_5) + spacing, 
-			drawY + sprite_get_height(spr_level1_5) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
-		var levelSprite = levelSprites[currentLevel - 1];
-		draw_sprite(levelSprite, 0, drawX, drawY);
-
+		
+		if (currentLevel > 0 && currentLevel < 6) {
+			draw_rectangle_color(drawX - spacing, drawY - spacing/2, drawX + sprite_get_width(spr_level1_5) + spacing, 
+				drawY + sprite_get_height(spr_level1_5) + spacing/2, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
+			var levelSprite = levelSprites[currentLevel - 1];
+			draw_sprite(levelSprite, 0, drawX, drawY);
+		}
+		
 		// Number of rotations with dark grey bg (top right)
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
