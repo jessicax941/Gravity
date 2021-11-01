@@ -1,32 +1,46 @@
 /// @description Draw dialog
-lineSeparation = obj_game.dialogSize + 4;
 textWidth = 250;
 nextStr = "\n\nNEXT [ENTER]";
 closeStr = "\n\nCLOSE [ENTER]";
-offset = obj_game.dialogSmallerSize*3 + 16; // Between main dialog line and next/close string
+offset = 16; // For entire dialog
+vPadding = 15;
+hPadding = 20;
 
 if (drawDialog) {
 	draw_set_halign(fa_center);
-	draw_set_valign(fa_bottom);
-	draw_set_font(obj_game.dialogFont);
-	var drawX = x - camera_get_view_x(view_camera[0]);
-	drawX = drawX / 448 * 800;
-	var drawY = y - camera_get_view_y(view_camera[0]);
-	drawY = drawY / 448 * 800 - offset;
+	draw_set_valign(fa_top);
 	
 	if (currLineNum >= 0 && currLineNum < array_length(dialogArr)) {
-		// Draw main dialog line
-		draw_text_ext(drawX, drawY, dialogArr[currLineNum], lineSeparation, textWidth);
-		
-		// Draw next or close string
+		var drawCoords = world_to_viewport_coords(x, y);
+		var drawX = drawCoords[0];
+		var drawY = drawCoords[1] - vPadding - offset;
 		var strToDraw = "";
 		if (currLineNum < array_length(dialogArr) - 1) {
 			strToDraw = nextStr;	
 		} else {
 			strToDraw = closeStr;
 		}
+		
+		// Draw rectangle background
 		draw_set_font(obj_game.dialogSmallerFont);
-		draw_text_ext(drawX, drawY + offset - 16, strToDraw, lineSeparation, textWidth);
+		var controlsTextHeight = string_height_ext(strToDraw, -1, textWidth);
+		draw_set_font(obj_game.dialogFont);
+		var mainTextHeight = string_height_ext(dialogArr[currLineNum], -1, textWidth);
+		var mainTextWidth = string_width_ext(dialogArr[currLineNum], -1, textWidth);
+		var c = c_dkgray;
+		var rectX1 = drawX - mainTextWidth/2 - hPadding;
+		var rectY1 = drawY - mainTextHeight - controlsTextHeight - vPadding;
+		var rectX2 = drawX + mainTextWidth/2 + hPadding;
+		var rectY2 = drawY + vPadding;
+		draw_rectangle_color(rectX1, rectY1, rectX2, rectY2, c, c, c, c, false);
+		
+		// Draw next or close string
+		draw_set_font(obj_game.dialogSmallerFont);
+		draw_text_ext(drawX, drawY - controlsTextHeight, strToDraw, -1, textWidth);
+		
+		// Draw main dialog line
+		draw_set_font(obj_game.dialogFont);
+		draw_text_ext(drawX, drawY - controlsTextHeight - mainTextHeight, dialogArr[currLineNum], -1, textWidth);
 	}
 	
 }

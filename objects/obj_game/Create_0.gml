@@ -7,9 +7,9 @@
 
 titleSize = 64;
 textSize = 32;
-smallSize = 18;
-dialogSize = 20;
-dialogSmallerSize = 16;
+smallSize = 20;
+dialogSize = 16;
+dialogSmallerSize = 14;
 
 titleFont = font_add("wooden-log.ttf", titleSize, true, false, 32, 128);
 textFont = font_add("wooden-log.ttf", textSize, true, false, 32, 128);

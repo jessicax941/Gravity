@@ -91,7 +91,7 @@ function rotate_object(isClockwise) {
 	y = roomCenterY - radius * dsin(phase);
 	
 	// Rotate around object's own origin
-	if (object_index != obj_player && object_index != obj_watermelon) {
+	if (object_index != obj_player && object_index != obj_watermelon && object_index != obj_dialog) {
 		image_angle += rotation;
 	}
 	
