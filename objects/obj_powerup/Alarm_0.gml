@@ -10,6 +10,7 @@ if (object_index == obj_powerup_beanstalk) {
 	with (dialog) {
 		dialogId = "d4";
 	}
+	obj_dialog_manager.isWaitingForBeanstalkTrigger = true;
 }
 
 if (object_index == obj_powerup_tree_of_life) {

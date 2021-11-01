@@ -22,6 +22,10 @@ function grow_beanstalk() {
 	
 		if (watermelon) {
 			var beanstalk = grow_plant(obj_beanstalk, watermelon.x, watermelon.y);
+			// Trigger next dialog if any
+			with (obj_dialog_manager) {
+				event_user(0);	
+			}
 			with (watermelon) {
 				instance_destroy();
 			}

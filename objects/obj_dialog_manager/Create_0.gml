@@ -1,5 +1,4 @@
 /// @description Create map of dialogs
-
 global.dialogMap = ds_map_create();
 
 ds_map_add(global.dialogMap, "d0", // Level 1 room 1
@@ -19,6 +18,8 @@ ds_map_add(global.dialogMap, "d6", // Level 4 room 2
 ds_map_add(global.dialogMap, "d7", // Level 5 last room
 	["This is it! I should be strong enough now to revive the Tree of Life!"]);
 
+// Triggers
+isWaitingForBeanstalkTrigger = false;
 
 
 
