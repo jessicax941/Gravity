@@ -1,17 +1,18 @@
+var startingX = vw - 50;
+var startingY = vh - 50;
+
 switch (room) {
 	case rm_start:
 		// Start menu options (right aligned, starting from bottom)
 		draw_set_font(textFont);
 		var spacing = 16;
-		var startingX = vw - 50;
-		var startingY = vh - 50;
 		var drawY = startingY;
 		for (var i = array_length(menuSprites) - 1; i >= 0; i--) {
 			var sprite = menuSprites[i];
 			var drawX = startingX - sprite_get_width(sprite)/2;
 			drawY -= (sprite_get_height(sprite) + spacing);
 			draw_sprite(sprite, 0, drawX, drawY);
-			if (pos == i) { draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), drawY); }
+			if (startMenuPos == i) { draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), drawY); }
 		}
 		
 		draw_set_halign(fa_right);
@@ -22,15 +23,29 @@ switch (room) {
 		break;
 		
 	case rm_howtoplay:
-		draw_set_halign(fa_center);
+		// How to play background
+		show_debug_message(string(howToPlayPage));
+		draw_sprite(spr_howtoplay, howToPlayPage, 0, 0);
+		
+		var spacing = 16;
+		var drawY = startingY + 10;
+		// Confirm to enter text
+		draw_set_halign(fa_right);
 		draw_set_valign(fa_center);
 		draw_set_font(smallFont);
-		var c = c_white;
-		var textToDisplay = "";
-		if (menuSprites[pos] == spr_btn_start) { textToDisplay = howToPlayFromStart; }
-		if (menuSprites[pos] == spr_btn_instructions) { textToDisplay = howToPlayFromInstructions; }
-		draw_text_color(570, 760, textToDisplay, c, c, c, c, 1);
+		var textC = c_white;
+		draw_text_color(startingX, drawY, "CONFIRM [ENTER]", textC, textC, textC, textC, 1);
+		
+		// How to play buttons
+		for (var i = array_length(howToPlaySprites) - 1; i >= 0; i--) {
+			var sprite = howToPlaySprites[i];
+			var drawX = startingX - sprite_get_width(sprite)/2;
+			drawY -= (sprite_get_height(sprite) + spacing);
+			draw_sprite(sprite, 0, drawX, drawY);
+			if (howToPlayPos == i) { draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), drawY); }
+		}
 		break;
+		
 		
 	case rm_level1:
 	case rm_level2:

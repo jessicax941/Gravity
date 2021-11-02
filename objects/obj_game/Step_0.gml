@@ -18,21 +18,22 @@ if (room == rm_start) {
 		audio_play_sound(snd_button_click, global.sfxPriority, false);
 	}
 
-	pos += (downKey - upKey);
-	if (pos < 0) {
-		pos = array_length(menuSprites) - 1;
+	startMenuPos += (downKey - upKey);
+	if (startMenuPos < 0) {
+		startMenuPos = array_length(menuSprites) - 1;
 	}
-	if (pos >= array_length(menuSprites)) {
-		pos = 0;	
+	if (startMenuPos >= array_length(menuSprites)) {
+		startMenuPos = 0;	
 	}
 
 	if (enterKey) {
-		switch (menuSprites[pos]) {
+		switch (menuSprites[startMenuPos]) {
 			case spr_btn_start: // Start
 				room_goto(rm_start);
 				break;
 			case spr_btn_instructions: // Instructions
 				room_goto(rm_howtoplay);
+				startMenuPos = 0;
 				break;
 			case spr_btn_options: // Options
 				//room_goto(rm_options);
@@ -47,19 +48,50 @@ if (room == rm_start) {
 }
 
 if (room == rm_howtoplay) {
-	if (enterKey || backspaceKey) {
+	if (howToPlayPage == 1) {
+		if (howToPlaySprites[0] != spr_btn_start) {
+			array_insert(howToPlaySprites, 0, spr_btn_start);	
+		}
+	} else {
+		if (howToPlaySprites[0] == spr_btn_start) {
+			array_delete(howToPlaySprites, 0, 1);	
+		}
+	}
+	howToPlayPos += (downKey - upKey);
+	if (howToPlayPos < 0) {
+		howToPlayPos = array_length(howToPlaySprites) - 1;
+	}
+	if (howToPlayPos >= array_length(howToPlaySprites)) {
+		howToPlayPos = 0;	
+	}
+	
+	if (upKey || downKey || enterKey) {
 		audio_play_sound(snd_button_click, global.sfxPriority, false);
 	}
 	
-	if (backspaceKey) {
-		room_goto(rm_start);	
-	}
-	
-	if (menuSprites[pos] == spr_btn_start) {
-		// Came from start button
-		if (enterKey) {
-			room_goto(rm_level1);
+	if (enterKey) {
+		switch (howToPlaySprites[howToPlayPos]) {
+			case spr_btn_next:
+				if (howToPlayPage == 0) { 
+					howToPlayPage = 1;
+				} else {
+					room_goto(rm_level1);
+					howToPlayPage = 0;
+				}
+				break;
+			case spr_btn_back:
+				if (howToPlayPage == 1) {
+					howToPlayPage = 0;
+				} else {
+					room_goto(rm_start);
+				}
+				break;
+			case spr_btn_start:
+				if (howToPlayPage == 1) {
+					room_goto(rm_level1);
+					howToPlayPage = 0;
+				}
+				break;
 		}
 	}
 }
-
