@@ -1,9 +1,7 @@
 upKey = keyboard_check_pressed(vk_up);
 downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
-backspaceKey = keyboard_check_pressed(vk_backspace);
 escapeKey = keyboard_check_pressed(vk_escape);
-//isAnyMenuKeyPressed = upKey || downKey || enterKey || backspaceKey || escapeKey;
 
 // CHEATS
 if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
@@ -29,7 +27,7 @@ if (room == rm_start) {
 	if (enterKey) {
 		switch (menuSprites[startMenuPos]) {
 			case spr_btn_start: // Start
-				room_goto(rm_start);
+				room_goto(rm_level1);
 				break;
 			case spr_btn_instructions: // Instructions
 				room_goto(rm_howtoplay);

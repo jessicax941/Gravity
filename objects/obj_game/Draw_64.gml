@@ -28,7 +28,7 @@ switch (room) {
 		draw_sprite(spr_howtoplay, howToPlayPage, 0, 0);
 		
 		var spacing = 16;
-		var drawY = startingY + 10;
+		var drawY = startingY + 5;
 		// Confirm to enter text
 		draw_set_halign(fa_right);
 		draw_set_valign(fa_center);

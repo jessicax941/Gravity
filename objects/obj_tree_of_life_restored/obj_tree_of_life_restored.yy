@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_tree_of_life",
-    "path": "sprites/spr_tree_of_life/spr_tree_of_life.yy",
+    "name": "spr_tree_of_life_restored",
+    "path": "sprites/spr_tree_of_life_restored/spr_tree_of_life_restored.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects/plants.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_tree_of_life",
+  "name": "obj_tree_of_life_restored",
   "tags": [],
   "resourceType": "GMObject",
 }
