@@ -11,10 +11,11 @@ function load_sfx() {
 
 function bgm_play() {
 	audio_play_sound(global.bgm, global.bgmPriority, true);
+	audio_sound_gain(global.bgm, 0.5, 0);
 }
 
 function bgm_pause() {
-	audio_pause_sound(global.bgm);	
+	audio_pause_sound(global.bgm);
 }
 
 function sfx_play(sfx) {

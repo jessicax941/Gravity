@@ -40,5 +40,5 @@ canGrowMelon = false
 canGrowBeanstalk = false
 canGrowTreeOfLife = false;
 
-//bgm_play();
+bgm_play();
 load_sfx();
