@@ -15,7 +15,7 @@ if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
 
 if (room == rm_start) {
 	if (upKey || downKey || enterKey) {
-		sfx_play(snd_button_click);
+		audio_play_sound(snd_button_click, global.sfxPriority, false);
 	}
 
 	pos += (downKey - upKey);
@@ -29,13 +29,13 @@ if (room == rm_start) {
 	if (enterKey) {
 		switch (menuSprites[pos]) {
 			case spr_btn_start: // Start
-				room_goto(rm_howtoplay);
+				room_goto(rm_start);
 				break;
 			case spr_btn_instructions: // Instructions
 				room_goto(rm_howtoplay);
 				break;
 			case spr_btn_options: // Options
-				room_goto(rm_options);
+				//room_goto(rm_options);
 				break;
 			case spr_btn_credits:
 				break;
@@ -48,7 +48,7 @@ if (room == rm_start) {
 
 if (room == rm_howtoplay) {
 	if (enterKey || backspaceKey) {
-		sfx_play(snd_button_click);
+		audio_play_sound(snd_button_click, global.sfxPriority, false);
 	}
 	
 	if (backspaceKey) {

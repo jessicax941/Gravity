@@ -8,7 +8,7 @@
 // Font sizes
 titleSize = 64;
 textSize = 32;
-smallSize = 20;
+smallSize = 22;
 dialogSize = 16;
 dialogSmallerSize = 14;
 

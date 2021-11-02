@@ -7,6 +7,7 @@
     {"id":{"name":"obj_walls_horz","path":"objects/obj_walls_horz/obj_walls_horz.yy",},"order":6,},
     {"id":{"name":"obj_dialog_manager","path":"objects/obj_dialog_manager/obj_dialog_manager.yy",},"order":19,},
     {"id":{"name":"spr_open_door","path":"sprites/spr_open_door/spr_open_door.yy",},"order":3,},
+    {"id":{"name":"spr_selector","path":"sprites/spr_selector/spr_selector.yy",},"order":14,},
     {"id":{"name":"play_sound","path":"scripts/play_sound/play_sound.yy",},"order":6,},
     {"id":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"order":3,},
     {"id":{"name":"spr_powerup_beanstalk","path":"sprites/spr_powerup_beanstalk/spr_powerup_beanstalk.yy",},"order":1,},
