@@ -1,3 +1,4 @@
 fadeOut = false;
-fadeSpeed = 1/room_speed / 2;
+fadeDuration = 0.5;
+fadeSpeed = 1/room_speed / fadeDuration;
 isActivated = false;

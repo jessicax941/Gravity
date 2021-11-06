@@ -1,8 +1,8 @@
 /// @description Draw dialog
-textWidth = 250;
+textWidth = 280;
 nextStr = "\n\nNEXT [ENTER]";
 closeStr = "\n\nCLOSE [ENTER]";
-offset = 16; // For entire dialog
+offset = 20; // For entire dialog
 vPadding = 15;
 hPadding = 20;
 
