@@ -4,7 +4,7 @@ if (isWaitingForBeanstalkTrigger) {
 	dialog = instance_create_layer(obj_player.x, obj_player.y - obj_player.sprite_yoffset,
 		"Rooms", obj_dialog);
 	with (dialog) {
-		dialogId = "d5";
+		dialogId = "d4-2";
 	}
 }
 

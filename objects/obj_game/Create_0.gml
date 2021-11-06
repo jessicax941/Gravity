@@ -36,8 +36,8 @@ vh = roomViewport[4]; // Get height
 // Game logic
 totalRotations = 0;
 // SHOULD BE FALSE BY DEFAULT
-canGrowMelon = false
-canGrowBeanstalk = false
+canGrowMelon = true;
+canGrowBeanstalk = false;
 canGrowTreeOfLife = false;
 
 bgm_play();
