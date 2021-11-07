@@ -24,7 +24,6 @@ switch (room) {
 		
 	case rm_howtoplay:
 		// How to play background
-		show_debug_message(string(howToPlayPage));
 		draw_sprite(spr_howtoplay, howToPlayPage, 0, 0);
 		
 		var spacing = 16;

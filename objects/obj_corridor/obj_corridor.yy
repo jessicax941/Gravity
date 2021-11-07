@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "room",
-    "path": "folders/Objects/room.yy",
+    "name": "levels",
+    "path": "folders/Objects/levels.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_corridor",

@@ -93,8 +93,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "room",
-    "path": "folders/Sprites/room.yy",
+    "name": "levels",
+    "path": "folders/Sprites/levels.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_platform",

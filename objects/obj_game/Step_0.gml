@@ -10,6 +10,8 @@ if (keyboard_check_pressed(ord("3"))) { room_goto(rm_level3); }
 if (keyboard_check_pressed(ord("4"))) { room_goto(rm_level4); }
 if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
 if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
+if (keyboard_check_pressed(ord("9"))) { room_goto(rm_intro); }
+//if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
 
 if (room == rm_start) {
 	if (upKey || downKey || enterKey) {
@@ -27,7 +29,7 @@ if (room == rm_start) {
 	if (enterKey) {
 		switch (menuSprites[startMenuPos]) {
 			case spr_btn_start: // Start
-				room_goto(rm_level1);
+				room_goto(rm_intro);
 				break;
 			case spr_btn_instructions: // Instructions
 				room_goto(rm_howtoplay);
@@ -73,7 +75,7 @@ if (room == rm_howtoplay) {
 				if (howToPlayPage == 0) { 
 					howToPlayPage = 1;
 				} else {
-					room_goto(rm_level1);
+					room_goto(rm_intro);
 					howToPlayPage = 0;
 				}
 				break;
@@ -86,7 +88,7 @@ if (room == rm_howtoplay) {
 				break;
 			case spr_btn_start:
 				if (howToPlayPage == 1) {
-					room_goto(rm_level1);
+					room_goto(rm_intro);
 					howToPlayPage = 0;
 				}
 				break;
