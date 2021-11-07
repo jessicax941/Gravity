@@ -21,21 +21,25 @@ if (drawDialog) {
 			strToDraw = closeStr;
 		}
 		
-		// Draw rectangle background
+		// Draw background
 		draw_set_font(obj_game.dialogSmallerFont);
 		var controlsTextHeight = string_height_ext(strToDraw, -1, textWidth);
 		draw_set_font(obj_game.dialogFont);
 		var mainTextHeight = string_height_ext(dialogArr[currLineNum], -1, textWidth);
 		var mainTextWidth = string_width_ext(dialogArr[currLineNum], -1, textWidth);
-		var c = c_dkgray;
-		var rectX1 = drawX - mainTextWidth/2 - hPadding;
-		var rectY1 = drawY - mainTextHeight - vPadding;
-		if (canBeClosed) {
-			rectY1 -= controlsTextHeight;
-		}
-		var rectX2 = drawX + mainTextWidth/2 + hPadding;
-		var rectY2 = drawY + vPadding;
-		draw_rectangle_color(rectX1, rectY1, rectX2, rectY2, c, c, c, c, false);
+		//var c = c_dkgray;
+		//var rectX1 = drawX - mainTextWidth/2 - hPadding;
+		//var rectY1 = drawY - mainTextHeight - vPadding;
+		//if (canBeClosed) {
+		//	rectY1 -= controlsTextHeight;
+		//}
+		//var rectX2 = drawX + mainTextWidth/2 + hPadding;
+		//var rectY2 = drawY + vPadding;
+		var bgWidth = textWidth + hPadding * 2;
+		var bgHeight = mainTextHeight + vPadding * 2;
+		if (canBeClosed) { bgHeight += controlsTextHeight; }
+		draw_sprite_stretched(spr_dialog_bg, 0, drawX, drawY - bgHeight/2 + vPadding, bgWidth, bgHeight);
+		//draw_rectangle_color(rectX1, rectY1, rectX2, rectY2, c, c, c, c, false);
 		
 		// Draw next or close string if dialog can be closed
 		if (canBeClosed) {

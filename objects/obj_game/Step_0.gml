@@ -1,7 +1,7 @@
 upKey = keyboard_check_pressed(vk_up);
 downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
-escapeKey = keyboard_check_pressed(vk_escape);
+//escapeKey = keyboard_check_pressed(vk_escape);
 
 // CHEATS
 if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }

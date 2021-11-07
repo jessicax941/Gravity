@@ -45,7 +45,6 @@ switch (room) {
 		}
 		break;
 		
-		
 	case rm_level1:
 	case rm_level2:
 	case rm_level3:
@@ -56,7 +55,6 @@ switch (room) {
 		var drawY = 20;
 		
 		// Top bar background
-		//var bgC = make_color_rgb(91, 56, 13); // Dark brown
 		var bgC = c_dkgray;
 		draw_rectangle_color(0, 0, vw, global.tileSize*2, bgC, bgC, bgC, bgC, false);
 		
@@ -71,9 +69,9 @@ switch (room) {
 		var hSpacing = 50;
 		var keyY = drawY + 12;
 		var qKeyX = drawX + sprite_get_width(spr_level1_5) + hSpacing;
-		draw_sprite_ext(spr_key_q, 0, qKeyX, keyY, 1, 1, 0, c_white, 1);
-		var eKeyX = qKeyX + sprite_get_width(spr_key_e) + hSpacing/2;
-		draw_sprite_ext(spr_key_e, 0, eKeyX, keyY, 1, 1, 0, c_white, 1);
+		draw_sprite_ext(spr_key_q, 0, qKeyX, keyY, 0.8, 0.8, 0, c_white, 1);
+		var eKeyX = qKeyX + sprite_get_width(spr_key_e) + 10;
+		draw_sprite_ext(spr_key_e, 0, eKeyX, keyY, 0.8, 0.8, 0, c_white, 1);
 		
 		// Number of rotations (top right)
 		draw_set_halign(fa_left);
