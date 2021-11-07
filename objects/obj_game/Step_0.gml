@@ -11,7 +11,7 @@ if (keyboard_check_pressed(ord("4"))) { room_goto(rm_level4); }
 if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
 if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
 if (keyboard_check_pressed(ord("9"))) { room_goto(rm_intro); }
-//if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
+if (keyboard_check_pressed(ord("0"))) { room_goto(rm_ending); }
 
 if (room == rm_start) {
 	if (upKey || downKey || enterKey) {

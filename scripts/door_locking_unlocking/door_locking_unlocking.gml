@@ -62,6 +62,8 @@ function lock_door() {
 function unlock_door() {
 	if (object_index == obj_closed_door) {
 		instance_change(obj_open_door, true);
+		audio_play_sound(snd_door_open, global.sfxPriority, false);
+		audio_sound_gain(snd_door_open, 0.15, 0);
 		//show_debug_message("unlock door at " + string(x) + ", " + string(y));
 	}
 }
