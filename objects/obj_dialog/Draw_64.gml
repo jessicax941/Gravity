@@ -29,18 +29,27 @@ if (drawDialog) {
 		var mainTextWidth = string_width_ext(dialogArr[currLineNum], -1, textWidth);
 		var c = c_dkgray;
 		var rectX1 = drawX - mainTextWidth/2 - hPadding;
-		var rectY1 = drawY - mainTextHeight - controlsTextHeight - vPadding;
+		var rectY1 = drawY - mainTextHeight - vPadding;
+		if (canBeClosed) {
+			rectY1 -= controlsTextHeight;
+		}
 		var rectX2 = drawX + mainTextWidth/2 + hPadding;
 		var rectY2 = drawY + vPadding;
 		draw_rectangle_color(rectX1, rectY1, rectX2, rectY2, c, c, c, c, false);
 		
-		// Draw next or close string
-		draw_set_font(obj_game.dialogSmallerFont);
-		draw_text_ext(drawX, drawY - controlsTextHeight, strToDraw, -1, textWidth);
+		// Draw next or close string if dialog can be closed
+		if (canBeClosed) {
+			draw_set_font(obj_game.dialogSmallerFont);
+			draw_text_ext(drawX, drawY - controlsTextHeight, strToDraw, -1, textWidth);	
+		}
 		
 		// Draw main dialog line
+		var mainTextY = drawY - mainTextHeight;
+		if (canBeClosed) {
+			mainTextY -= controlsTextHeight;
+		}
 		draw_set_font(obj_game.dialogFont);
-		draw_text_ext(drawX, drawY - controlsTextHeight - mainTextHeight, dialogArr[currLineNum], -1, textWidth);
+		draw_text_ext(drawX, mainTextY, dialogArr[currLineNum], -1, textWidth);
 	}
 	
 }

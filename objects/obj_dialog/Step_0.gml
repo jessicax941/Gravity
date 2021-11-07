@@ -15,7 +15,7 @@ if (player != noone && !isComplete) {
 		}
 	}
 	
-	if (drawDialog && enterPressed) {
+	if (drawDialog && canBeClosed && enterPressed) {
 		// Go to next line in dialog or close dialog
 		if (currLineNum >= array_length(dialogArr) - 1) {
 			drawDialog = false;

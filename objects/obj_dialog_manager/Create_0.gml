@@ -34,6 +34,9 @@ ds_map_add(global.dialogMap, "d5-2", // Level 5 last room (on picking up powerup
 	
 ds_map_add(global.dialogMap, "d6-1", // Level 6 (on entering the room)
 	["I’m back where I started! Time to save this forest!"]);
+	
+ds_map_add(global.dialogMap, "d6-2", // Level 6 (on colliding with exit)
+	["I can't leave yet! The Tree of Life still needs saving :("]);
 
 // Triggers
 isWaitingForBeanstalkTrigger = false;
