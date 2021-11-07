@@ -37,8 +37,8 @@ vh = roomViewport[4]; // Get height
 totalRotations = 0;
 // SHOULD BE FALSE BY DEFAULT
 canGrowMelon = true;
-canGrowBeanstalk = false;
-canGrowTreeOfLife = false;
+canGrowBeanstalk = true;
+canGrowTreeOfLife = true;
 
-bgm_play();
+//bgm_play();
 load_sfx();

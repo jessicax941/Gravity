@@ -22,6 +22,7 @@
     {"id":{"name":"spr_btn_back","path":"sprites/spr_btn_back/spr_btn_back.yy",},"order":16,},
     {"id":{"name":"obj_closed_door","path":"objects/obj_closed_door/obj_closed_door.yy",},"order":0,},
     {"id":{"name":"spr_walls_vert","path":"sprites/spr_walls_vert/spr_walls_vert.yy",},"order":8,},
+    {"id":{"name":"obj_ending","path":"objects/obj_ending/obj_ending.yy",},"order":26,},
     {"id":{"name":"spr_platform","path":"sprites/spr_platform/spr_platform.yy",},"order":4,},
     {"id":{"name":"spr_beanstalk","path":"sprites/spr_beanstalk/spr_beanstalk.yy",},"order":0,},
     {"id":{"name":"spr_exit","path":"sprites/spr_exit/spr_exit.yy",},"order":2,},
@@ -72,6 +73,7 @@
     {"id":{"name":"check_collision","path":"scripts/check_collision/check_collision.yy",},"order":1,},
     {"id":{"name":"obj_powerup_melon","path":"objects/obj_powerup_melon/obj_powerup_melon.yy",},"order":0,},
     {"id":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"order":3,},
+    {"id":{"name":"rm_ending","path":"rooms/rm_ending/rm_ending.yy",},"order":11,},
     {"id":{"name":"spr_watermelon","path":"sprites/spr_watermelon/spr_watermelon.yy",},"order":1,},
     {"id":{"name":"spr_howtoplay","path":"sprites/spr_howtoplay/spr_howtoplay.yy",},"order":11,},
     {"id":{"name":"spr_level1_5","path":"sprites/spr_level1_5/spr_level1_5.yy",},"order":2,},
@@ -124,6 +126,7 @@
     {"roomId":{"name":"rm_level4","path":"rooms/rm_level4/rm_level4.yy",},},
     {"roomId":{"name":"rm_level5","path":"rooms/rm_level5/rm_level5.yy",},},
     {"roomId":{"name":"rm_level6","path":"rooms/rm_level6/rm_level6.yy",},},
+    {"roomId":{"name":"rm_ending","path":"rooms/rm_ending/rm_ending.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

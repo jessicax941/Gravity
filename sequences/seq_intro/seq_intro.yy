@@ -9,8 +9,8 @@
   "length": 240.0,
   "events": {
     "Keyframes": [
-      {"id":"1f7b28b3-3e75-4fe0-8246-efd3f46effb1","Key":239.9999,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
-              "intro-end",
+      {"id":"74238608-60a3-4e0d-8f8c-c9757eb63096","Key":239.9999,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+              "seq-end",
             ],"resourceVersion":"1.0","resourceType":"MessageEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MessageEventKeyframe>",},
     ],
     "resourceVersion": "1.0",
@@ -60,10 +60,7 @@
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282953202,"inheritsTrackColour":true,"traits":0,"interpolation":1,"tracks":[],"events":[],"resourceVersion":"1.0","tags":[],"resourceType":"GMRealTrack","modifiers":[],},
       ],"trackColour":4282953202,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"events":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"spr_cutscene_intro","tags":[],"resourceType":"GMGraphicTrack","modifiers":[],},
   ],
-  "visibleRange": {
-    "x": 0.0,
-    "y": 240.0,
-  },
+  "visibleRange": null,
   "lockOrigin": false,
   "showBackdrop": true,
   "showBackdropImage": false,

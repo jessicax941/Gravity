@@ -43,3 +43,10 @@ function grow_beanstalk() {
 		show_debug_message("cannot grow beanstalk");	
 	}
 }
+
+//function grow_tree_of_life() {
+//	var treeInst = instance_place(x, y, obj_tree_of_life_dead);
+//	with (treeInst) {
+//		instance_change(obj_tree_of_life_restored, true);
+//	}
+//}

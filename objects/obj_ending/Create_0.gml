@@ -7,4 +7,3 @@ if (instance_exists(obj_text_spawn)) {
 	drawTextX = drawCoords[0];
 	drawTextY = drawCoords[1];
 }
-nextRoom = room == rm_intro ? rm_level1 : rm_start;
