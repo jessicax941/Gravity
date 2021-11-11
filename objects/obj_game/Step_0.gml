@@ -30,6 +30,7 @@ if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
 if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
 if (keyboard_check_pressed(ord("9"))) { room_goto(rm_intro); }
 if (keyboard_check_pressed(ord("0"))) { room_goto(rm_ending); }
+if (keyboard_check_pressed(vk_tab)) { room_goto(rm_victory); }
 
 if (room == rm_start) {
 	if (upKey || downKey || enterKey) {
@@ -57,7 +58,6 @@ if (room == rm_start) {
 				global.isSettingsOpen = true;
 				break;
 			case spr_btn_credits: // Credits
-				show_debug_message("going to credits???");
 				room_goto(rm_credits);
 				break;
 			case spr_btn_quit: // Quit
@@ -72,4 +72,8 @@ if (room == rm_credits) {
 		audio_play_sound(snd_button_click, global.sfxPriority, false);
 		room_goto(rm_start);	
 	}
+}
+
+if (room == rm_victory) {
+	process_victory_input();
 }

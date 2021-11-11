@@ -77,6 +77,12 @@ switch (room) {
 		draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), startingY);
 		break;
 	#endregion
+	
+	#region VICTORY
+	case rm_victory:
+		draw_victory();
+		break;
+	#endregion
 }
 
 if (global.gamePaused) { 
