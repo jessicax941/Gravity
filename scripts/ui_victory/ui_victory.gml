@@ -31,18 +31,21 @@ function draw_victory() {
 	draw_text(drawX, drawY, "Number of rotations");
 	
 	draw_set_font(smallFont);
-	draw_set_halign(fa_left);
+	draw_set_halign(fa_middle);
 	var levelString = "Level X";
 	stringWidth = string_width(levelString);
 	stringHeight = string_height(levelString);
+	var totalRotations = 0;
 	for (var i = 0; i < 5; i++) {
 		var levelNum = i + 1;
 		drawY += stringHeight + spacing;
 		// Level on the left
-		draw_text(drawX - stringWidth, drawY, "Level " + string(levelNum));
+		draw_text(drawX - stringWidth/2, drawY, "Level " + string(levelNum));
 		
 		// Rotations on the right
-		draw_text(drawX + stringWidth, drawY, string(levelRotations[i]));
+		totalRotations += levelRotations[i];
+		var numRotationString = string(levelRotations[i]);
+		draw_text(drawX + string_width(numRotationString)/2 + 50, drawY, numRotationString);
 	}
 	
 	// Total rotations
@@ -51,8 +54,9 @@ function draw_victory() {
 	stringWidth = string_width(totalString);
 	stringHeight = string_height(totalString);
 	drawY += stringHeight + spacing*4;
-	draw_text(drawX - stringWidth, drawY, totalString);
-	draw_text(drawX + stringWidth, drawY, string(totalRotations));
+	var totalRotationString = string(totalRotations);
+	draw_text(drawX - stringWidth/2, drawY, totalString);
+	draw_text(drawX + string_width(totalRotationString)/2 + 50, drawY, totalRotationString);
 	
 	// Next button
 	var botRightX = vw - 50;

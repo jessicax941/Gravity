@@ -39,8 +39,8 @@ vw = roomViewport[3]; // Get width
 vh = roomViewport[4]; // Get height
 
 // Game logic
-totalRotations = 0;
-levelRotations = [0, 0, 0, 0, 0];
+//totalRotations = 0;
+levelRotations = [5, 24, 26, 25, 56];
 
 // SHOULD BE FALSE BY DEFAULT
 canGrowMelon = true;

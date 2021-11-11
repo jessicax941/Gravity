@@ -1,9 +1,4 @@
 /// @description For pausing game
-//if (global.isHowToPlayOpen) {
-//	process_howtoplay_input();
-//	return;
-//}
-
 var isInGame = string_count("level", room_get_name(room));
 if (escapeKey && isInGame) {
 	audio_play_sound(snd_button_click, global.sfxPriority, false);
@@ -22,7 +17,3 @@ if (escapeKey && isInGame) {
 		}
 	}
 }
-
-
-
-//if (global.gamePaused) { process_pause_menu_input(); }
