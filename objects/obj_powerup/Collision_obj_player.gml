@@ -24,4 +24,6 @@ if (!isActivated) {
 	fadeOut = true;
 	alarm[0] = room_speed * fadeDuration; // Spawn dialog in 2 seconds	
 	isActivated = true;
+	
+	sfx_play_powerup();
 }

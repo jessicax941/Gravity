@@ -10,6 +10,7 @@ function grow_watermelon() {
 	if (obj_game.canGrowMelon) {
 		// Grown from sapling
 		grow_plant(obj_watermelon, x, y);
+		sfx_play_grow_plant();
 		instance_destroy();
 	} else {
 		show_debug_message("cannot grow watermelon");
@@ -24,6 +25,7 @@ function grow_beanstalk() {
 	
 		if (watermelon) {
 			var beanstalk = grow_plant(obj_beanstalk, watermelon.x, watermelon.y);
+			sfx_play_grow_plant();
 			// Trigger next dialog if any
 			with (obj_dialog_manager) {
 				event_user(0);	
@@ -45,10 +47,3 @@ function grow_beanstalk() {
 		show_debug_message("cannot grow beanstalk");	
 	}
 }
-
-//function grow_tree_of_life() {
-//	var treeInst = instance_place(x, y, obj_tree_of_life_dead);
-//	with (treeInst) {
-//		instance_change(obj_tree_of_life_restored, true);
-//	}
-//}

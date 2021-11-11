@@ -19,6 +19,19 @@ function bgm_stop() {
 	audio_stop_sound(global.bgm);
 }
 
+function bgm_fade_out_normal() {
+	audio_sound_gain(m_bgm, 0, 1);
+	alarm[0] = room_speed;
+}
+
+function bgm_fade_in_ending() {
+	audio_play_sound(m_ending, global.bgmPriority, true);
+	audio_sound_gain(m_ending, 0, 0);
+	audio_sound_gain(m_ending, 0.75, 1);
+	global.bgm = m_ending;
+	//event_perform();
+}
+
 function sfx_enable() {
 	audio_group_set_gain(audiogroup_sfx, 1, 0);
 	global.isSfxOn = true;
@@ -29,16 +42,16 @@ function sfx_disable() {
 	global.isSfxOn = false;
 }
 
-function sfx_play(sfx) {
-	if (audio_is_paused(sfx)) {
-		audio_resume_sound(sfx);
-		return;
-	}
+//function sfx_play(sfx) {
+//	if (audio_is_paused(sfx)) {
+//		audio_resume_sound(sfx);
+//		return;
+//	}
 	
-	if (!audio_is_playing(sfx) && global.sfxLoaded) {
-		audio_play_sound(sfx, global.sfxPriority, false);
-	}
-}
+//	if (!audio_is_playing(sfx) && global.sfxLoaded) {
+//		audio_play_sound(sfx, global.sfxPriority, false);
+//	}
+//}
 
 //function sfx_stop(sfx) {
 //	if (audio_is_playing(sfx)) {
@@ -46,11 +59,11 @@ function sfx_play(sfx) {
 //	}
 //}
 
-function sfx_pause(sfx) {
-	if (audio_is_playing(sfx)) {
-		audio_pause_sound(sfx);
-	}
-}
+//function sfx_pause(sfx) {
+//	if (audio_is_playing(sfx)) {
+//		audio_pause_sound(sfx);
+//	}
+//}
 
 //function sfx_resume(sfx) {
 //	if (audio_is_paused(sfx)) {
@@ -60,15 +73,10 @@ function sfx_pause(sfx) {
 
 function sfx_play_door_open() {
 	audio_play_sound(snd_door_open, global.sfxPriority, false);
-	//audio_sound_gain(snd_door_open, 0.5, 0);
 }
 
-function sfx_play_grow_melon() {
+function sfx_play_grow_plant() {
 	audio_play_sound(snd_grow_melon, global.sfxPriority, false);
-}
-
-function sfx_play_grow_beanstalk() {
-	audio_play_sound(snd_grow_beanstalk, global.sfxPriority, false);
 }
 
 function sfx_play_powerup() {

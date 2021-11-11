@@ -40,12 +40,12 @@ vh = roomViewport[4]; // Get height
 
 // Game logic
 //totalRotations = 0;
-levelRotations = [5, 24, 26, 25, 56];
+levelRotations = [0, 0, 0, 0, 0];
 
 // SHOULD BE FALSE BY DEFAULT
 canGrowMelon = true;
 canGrowBeanstalk = true;
 canGrowTreeOfLife = true;
 
-//bgm_play();
+bgm_play();
 load_sfx();

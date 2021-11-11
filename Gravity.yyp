@@ -105,7 +105,6 @@
     {"id":{"name":"ui_howtoplay","path":"scripts/ui_howtoplay/ui_howtoplay.yy",},"order":9,},
     {"id":{"name":"ui_victory","path":"scripts/ui_victory/ui_victory.yy",},"order":11,},
     {"id":{"name":"spr_credits","path":"sprites/spr_credits/spr_credits.yy",},"order":28,},
-    {"id":{"name":"snd_grow_beanstalk","path":"sounds/snd_grow_beanstalk/snd_grow_beanstalk.yy",},"order":7,},
     {"id":{"name":"rm_level2","path":"rooms/rm_level2/rm_level2.yy",},"order":1,},
     {"id":{"name":"seq_intro","path":"sequences/seq_intro/seq_intro.yy",},"order":0,},
     {"id":{"name":"spr_settings","path":"sprites/spr_settings/spr_settings.yy",},"order":24,},

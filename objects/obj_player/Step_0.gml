@@ -81,3 +81,5 @@ if (!isGrounded) {
 if (horizontalSpeed != 0) {
 	image_xscale = sign(horizontalSpeed);
 }
+
+prevY = y;

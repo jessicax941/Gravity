@@ -7,3 +7,7 @@ if (room == rm_level1) {
 	//canGrowBeanstalk = false;
 	//canGrowTreeOfLife = false;
 }
+
+if (room == rm_ending) {
+	bgm_fade_out_normal();
+}
