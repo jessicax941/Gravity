@@ -98,5 +98,4 @@ function process_howtoplay_input() {
 		}
 	}
 	
-	//show_debug_message(string(global.isHowToPlayOpen));
 }
