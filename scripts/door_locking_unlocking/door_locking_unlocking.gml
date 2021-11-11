@@ -43,7 +43,6 @@ function check_door_lock() {
 	}
 	
 	// No corridor and another closed door found
-	//show_debug_message("cannot unlock door at " + string(x) + ", " + string(y));
 	lock_door();
 }
 
@@ -55,15 +54,12 @@ function has_door_and_corridor(corridorX, corridorY, otherDoorX, otherDoorY) {
 function lock_door() {
 	if (object_index == obj_open_door) {
 		instance_change(obj_closed_door, true);
-		//show_debug_message("lock door at " + string(x) + ", " + string(y));
 	}
 }
 
 function unlock_door() {
 	if (object_index == obj_closed_door) {
 		instance_change(obj_open_door, true);
-		audio_play_sound(snd_door_open, global.sfxPriority, false);
-		audio_sound_gain(snd_door_open, 0.15, 0);
-		//show_debug_message("unlock door at " + string(x) + ", " + string(y));
+		sfx_play_door_open();
 	}
 }

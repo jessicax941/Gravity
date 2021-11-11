@@ -37,14 +37,12 @@ function apply_vertical_movement(spd) {
 
 // For watermelon
 function apply_gravity() {
-	//var collisionWithWall = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_wall, false, false) 
-	//var collisionWithPlatform = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_platform, false, false);
-	//var collisionWithPlayer = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, obj_player, false, false);
+	if (global.gamePaused) { return; }
+	
 	var melonCollisionObj = ds_list_create();
 	ds_list_copy(melonCollisionObj, global.collisionObjects);
-	//ds_list_delete(melonCollisionObj, ds_list_find_index(melonCollisionObj, obj_watermelon));
 	ds_list_add(melonCollisionObj, obj_player);
-	var gravityValue = obj_player.gravityValue;
+	var gravityValue = global.gravityValue;
 	var vertSpeed = gravityValue; // Assume no collision first; not grounded
 	isMelonGrounded = false;
 
@@ -57,16 +55,6 @@ function apply_gravity() {
 			break;
 		}
 	}
-	
-
-	//if (collisionWithWall == noone && collisionWithPlatform == noone && collisionWithPlayer == noone) {
-	//	// No collision found	
-	//	isMelonGrounded = false;
-	//	vertSpeed = gravityValue;
-	//} else {
-	//	isMelonGrounded = true;
-	//	vertSpeed = 0;
-	//}
 
 	if (!global.isRotating) {
 		// Apply gravity with collision

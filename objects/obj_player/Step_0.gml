@@ -4,6 +4,8 @@ if (horizontalSpeed != 0) {
 
 draw_self();
 
+if (global.gamePaused) { return; }
+
 #region GRAVITY AND VERTICAL COLLISION
 	// Check if collision object is colliding with player feet and assign vertical speed
 	if (!has_rect_collision(bbox_left, y + sprite_yoffset - 1, bbox_right, y + sprite_yoffset + 1)) {

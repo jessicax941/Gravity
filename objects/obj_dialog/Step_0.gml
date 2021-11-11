@@ -11,11 +11,13 @@ if (player != noone && !isComplete) {
 		dialogArr = ds_map_find_value(global.dialogMap, dialogId);
 		var numDialog = array_length(dialogArr);
 		if (numDialog > 0) {
+			if (!drawDialog) { audio_play_sound(snd_speech_bubble, global.sfxPriority, false );}
 			drawDialog = true;
 		}
 	}
 	
 	if (drawDialog && canBeClosed && enterPressed) {
+		audio_play_sound(snd_speech_bubble, global.sfxPriority, false);
 		// Go to next line in dialog or close dialog
 		if (currLineNum >= array_length(dialogArr) - 1) {
 			drawDialog = false;

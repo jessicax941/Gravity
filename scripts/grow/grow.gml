@@ -5,6 +5,7 @@ function grow_plant(obj, xx, yy) {
 	return plant;
 }
 
+// Called from sapling
 function grow_watermelon() {
 	if (obj_game.canGrowMelon) {
 		// Grown from sapling
@@ -15,6 +16,7 @@ function grow_watermelon() {
 	}
 }
 
+// Called from player
 function grow_beanstalk() {
 	if (obj_game.canGrowBeanstalk) {
 		// Grown from watermelon

@@ -1,3 +1,5 @@
+if (global.gamePaused) { return; }
+
 horizontalSpeed = -walkSpeed;
 
 horizontalSpeed = horizontalSpeed*drag;

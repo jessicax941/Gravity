@@ -4,7 +4,7 @@ var startingY = vh - 50;
 switch (room) {
 	case rm_start:
 		// Start menu options (right aligned, starting from bottom)
-		draw_set_font(textFont);
+		//draw_set_font(textFont);
 		var spacing = 16;
 		var drawY = startingY;
 		for (var i = array_length(menuSprites) - 1; i >= 0; i--) {
@@ -60,8 +60,13 @@ switch (room) {
 		
 		// Level counter (left right)
 		var currentLevel = string_char_at(room_get_name(room), string_length(room_get_name(room)));
-		if (currentLevel > 0 && currentLevel < 6) {
-			var levelSprite = levelSprites[currentLevel - 1];
+		if (currentLevel > 0 && currentLevel < 7) {
+			var levelSprite;
+			if (currentLevel == 6) {
+				levelSprite = levelSprites[0];
+			} else {
+				levelSprite = levelSprites[currentLevel - 1];
+			}
 			draw_sprite(levelSprite, 0, drawX, drawY);
 		}
 		
@@ -76,9 +81,9 @@ switch (room) {
 		// Number of rotations (top right)
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
-		draw_set_font(smallFont);
+		draw_set_font(textFont);
 		var spacing = 10;
-		var c = c_white;
+		var c = global.orange;
 		var rotationsText = "Rotations: " + string(numRotations);
 		var rotationsX = vw - string_width(rotationsText) - spacing*2;
 		var rotationsY = 20;

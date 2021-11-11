@@ -1,4 +1,12 @@
 /// @description Grow plants
+if (global.gamePaused) { return; }
+
+if (place_meeting(x, y, obj_plant_sapling)) {
+	var sapling = instance_place(x, y, obj_plant_sapling);
+	with (sapling) { grow_watermelon(); }
+	return;
+}
+
 // Detect growing of beanstalk if close enough to watermelon
 grow_beanstalk();
 
