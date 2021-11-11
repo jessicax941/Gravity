@@ -2,9 +2,9 @@ var startingX = vw - 50;
 var startingY = vh - 50;
 
 switch (room) {
+	#region MAIN MENU
 	case rm_start:
-		// Start menu options (right aligned, starting from bottom)
-		//draw_set_font(textFont);
+		// Main menu options (right aligned, starting from bottom)
 		var spacing = 16;
 		var drawY = startingY;
 		for (var i = array_length(menuSprites) - 1; i >= 0; i--) {
@@ -21,7 +21,9 @@ switch (room) {
 		var textC = c_white;
 		draw_text_color(startingX, startingY, "CONFIRM [ENTER]", textC, textC, textC, textC, 1);
 		break;
-		
+	#endregion
+	
+	#region HOW TO PLAY
 	case rm_howtoplay:
 		// How to play background
 		draw_sprite(spr_howtoplay, howToPlayPage, 0, 0);
@@ -44,7 +46,9 @@ switch (room) {
 			if (howToPlayPos == i) { draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), drawY); }
 		}
 		break;
+	#endregion
 		
+	#region LEVELS
 	case rm_level1:
 	case rm_level2:
 	case rm_level3:
@@ -90,4 +94,9 @@ switch (room) {
 		draw_text_color(rotationsX, rotationsY, rotationsText, c, c, c, c, 1);
 		
 		break;
+	#endregion
+}
+
+if (global.gamePaused) {
+	draw_pause_menu();
 }

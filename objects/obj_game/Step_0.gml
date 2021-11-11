@@ -3,7 +3,8 @@ downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
 escapeKey = keyboard_check_pressed(vk_escape);
 
-if (escapeKey) {
+var isInGame = string_count("level", room_get_name(room));
+if (escapeKey && isInGame) {
 	global.gamePaused = !global.gamePaused;
 	if (global.gamePaused) {
 		show_debug_message("GAME PAUSED");
@@ -51,7 +52,7 @@ if (room == rm_start) {
 				room_goto(rm_howtoplay);
 				startMenuPos = 0;
 				break;
-			case spr_btn_options: // Options
+			case spr_btn_settings: // Options
 				//room_goto(rm_options);
 				break;
 			case spr_btn_credits:
@@ -73,6 +74,7 @@ if (room == rm_howtoplay) {
 			array_delete(howToPlaySprites, 0, 1);	
 		}
 	}
+	
 	howToPlayPos += (downKey - upKey);
 	if (howToPlayPos < 0) {
 		howToPlayPos = array_length(howToPlaySprites) - 1;
@@ -111,3 +113,5 @@ if (room == rm_howtoplay) {
 		}
 	}
 }
+
+if (global.gamePaused) { get_pause_menu_input(); }
