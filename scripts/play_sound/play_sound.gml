@@ -62,3 +62,23 @@ function sfx_play_door_open() {
 	audio_play_sound(snd_door_open, global.sfxPriority, false);
 	//audio_sound_gain(snd_door_open, 0.5, 0);
 }
+
+function sfx_play_grow_melon() {
+	audio_play_sound(snd_grow_melon, global.sfxPriority, false);
+}
+
+function sfx_play_grow_beanstalk() {
+	audio_play_sound(snd_grow_beanstalk, global.sfxPriority, false);
+}
+
+function sfx_play_powerup() {
+	audio_play_sound(snd_powerup, global.sfxPriority, false);
+}
+
+function sfx_play_walk_stone() {
+	audio_play_sound(snd_walk_stone, global.sfxPriority, false);
+}
+
+function sfx_play_landing() {
+	audio_play_sound(snd_landing, global.sfxPriority, false);
+}

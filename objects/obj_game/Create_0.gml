@@ -47,5 +47,5 @@ canGrowMelon = true;
 canGrowBeanstalk = true;
 canGrowTreeOfLife = true;
 
-bgm_play();
+//bgm_play();
 load_sfx();

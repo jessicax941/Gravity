@@ -1,8 +1,8 @@
-if (horizontalSpeed != 0) {
-	image_xscale = sign(horizontalSpeed);
+leftKey = keyboard_check(vk_left);
+rightKey = keyboard_check(vk_right);
+if (!leftKey && !rightKey) {
+	horizontalSpeed = 0;	
 }
-
-draw_self();
 
 if (global.gamePaused) { return; }
 
@@ -15,7 +15,12 @@ if (global.gamePaused) { return; }
 	} else {
 		isGrounded = true;
 		vertSpeed = 0;
+		
+		if (!prevIsGrounded) {
+			sfx_play_landing();
+		}
 	}
+	prevIsGrounded = isGrounded;
 
 	// Apply gravity only when not rotating and not entirely on a beanstalk
 	if (!global.isRotating && !position_meeting(x, bbox_top, obj_beanstalk)) {
@@ -56,5 +61,23 @@ if (global.gamePaused) { return; }
 		}
 	}
 
-
 #endregion
+
+// Animation
+if (!isGrounded) {
+	sprite_index = spr_player_falling;
+	image_speed = 0;
+	image_index = 0;
+} else {
+	image_speed = 1;
+	if (horizontalSpeed != 0) {
+		sprite_index = spr_player_walking;
+		
+	} else {
+		sprite_index = spr_player;
+	}
+}
+
+if (horizontalSpeed != 0) {
+	image_xscale = sign(horizontalSpeed);
+}
