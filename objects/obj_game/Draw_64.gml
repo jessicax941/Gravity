@@ -70,6 +70,13 @@ switch (room) {
 		
 		break;
 	#endregion
+	
+	#region CREDITS
+	case rm_credits:
+		draw_sprite(spr_btn_back, 0, startingX - sprite_get_width(spr_btn_back)/2, startingY);
+		draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), startingY);
+		break;
+	#endregion
 }
 
 if (global.gamePaused) { 
@@ -83,4 +90,3 @@ if (global.isHowToPlayOpen) {
 if (global.isSettingsOpen) {
 	draw_settings();	
 }
-

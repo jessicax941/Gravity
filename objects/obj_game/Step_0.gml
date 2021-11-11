@@ -56,11 +56,20 @@ if (room == rm_start) {
 			case spr_btn_settings: // Options
 				global.isSettingsOpen = true;
 				break;
-			case spr_btn_credits:
+			case spr_btn_credits: // Credits
+				show_debug_message("going to credits???");
+				room_goto(rm_credits);
 				break;
 			case spr_btn_quit: // Quit
 				game_end();
 				break;
 		}
+	}
+}
+
+if (room == rm_credits) {
+	if (enterKey) {
+		audio_play_sound(snd_button_click, global.sfxPriority, false);
+		room_goto(rm_start);	
 	}
 }
