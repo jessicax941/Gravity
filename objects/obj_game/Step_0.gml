@@ -3,22 +3,7 @@ downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
 escapeKey = keyboard_check_pressed(vk_escape);
 
-var isInGame = string_count("level", room_get_name(room));
-if (escapeKey && isInGame) {
-	global.gamePaused = !global.gamePaused;
-	if (global.gamePaused) {
-		show_debug_message("GAME PAUSED");
-		with (all) {
-			gamePausedImageSpeed = image_speed;
-			image_speed = 0;
-		}
-	} else {
-		show_debug_message("GAME RESUMED");
-		with (all) {
-			image_speed = gamePausedImageSpeed;
-		}
-	}
-}
+
 
 // CHEATS
 if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
@@ -114,4 +99,3 @@ if (room == rm_howtoplay) {
 	}
 }
 
-if (global.gamePaused) { get_pause_menu_input(); }

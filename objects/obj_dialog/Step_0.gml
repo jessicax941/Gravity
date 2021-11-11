@@ -1,4 +1,6 @@
 /// @description Show dialog if player colliding and haven't shown before
+if (global.gamePaused) { return; }
+
 enterPressed = keyboard_check_pressed(vk_enter);
 
 var player = instance_place(x, y, obj_player);

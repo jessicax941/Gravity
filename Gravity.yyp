@@ -90,7 +90,6 @@
     {"id":{"name":"ui","path":"scripts/ui/ui.yy",},"order":8,},
     {"id":{"name":"spr_btn_credits","path":"sprites/spr_btn_credits/spr_btn_credits.yy",},"order":0,},
     {"id":{"name":"snd_walk_sapling","path":"sounds/snd_walk_sapling/snd_walk_sapling.yy",},"order":5,},
-    {"id":{"name":"dialog","path":"scripts/dialog/dialog.yy",},"order":7,},
     {"id":{"name":"spr_level2_5","path":"sprites/spr_level2_5/spr_level2_5.yy",},"order":3,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":6,},
     {"id":{"name":"spr_cutscene_intro","path":"sprites/spr_cutscene_intro/spr_cutscene_intro.yy",},"order":19,},

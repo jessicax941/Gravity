@@ -1,10 +1,6 @@
 
 
 function draw_pause_menu() {
-	// Resume
-	// Instructions
-	// Settings
-	// Main menu (your progress will not be saved)
 	var yOffset = 50;
 	
 	// Translucent background
@@ -38,7 +34,7 @@ function draw_pause_menu() {
 		
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	draw_set_font(dialogSmallerFont);
+	draw_set_font(dialogFont);
 	var textC = global.orange;
 	draw_text_color(drawX, drawY + sprite_get_height(sprite) + spacing/2, "(Your progress will not be saved)", textC, textC, textC, textC, 1);
 	
@@ -55,5 +51,22 @@ function get_pause_menu_input() {
 	}
 	if (pauseMenuPos >= array_length(pauseMenuSprites)) {
 		pauseMenuPos = 0;
+	}
+	
+	if (enterKey) {
+		switch (pauseMenuSprites[pauseMenuPos]) {
+			case spr_btn_resume:
+				global.gamePaused = false;
+				break;
+			case spr_btn_instructions:
+				// Open instructions
+				break;
+			case spr_btn_settings:
+				// Open settings
+				break;
+			case spr_btn_main_menu:
+				room_goto(rm_start);
+				break;
+		}
 	}
 }
