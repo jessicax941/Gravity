@@ -3,6 +3,12 @@ downKey = keyboard_check_pressed(vk_down);
 enterKey = keyboard_check_pressed(vk_enter);
 escapeKey = keyboard_check_pressed(vk_escape);
 
+// Input for settings overrides that for main and pause menus
+if (global.isSettingsOpen) {
+	process_settings_input();
+	return;
+}
+
 // Input for how to play screen overrides that for main and pause menus
 if (global.isHowToPlayOpen) {
 	process_howtoplay_input();
@@ -48,7 +54,7 @@ if (room == rm_start) {
 				startMenuPos = 0;
 				break;
 			case spr_btn_settings: // Options
-				//room_goto(rm_options);
+				global.isSettingsOpen = true;
 				break;
 			case spr_btn_credits:
 				break;

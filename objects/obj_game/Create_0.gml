@@ -1,13 +1,7 @@
-//enum MenuLevel {
-//	MainMenu,
-//	Instructions,
-//	InGame,
-//	Pause
-//}
-
 global.orange = make_colour_rgb(255, 185, 102);
 global.gamePaused = false;
 global.isHowToPlayOpen = false;
+global.isSettingsOpen = false;
 
 // Font
 titleSize = 48;
@@ -36,12 +30,13 @@ numHowToPlayPages = sprite_get_number(spr_howtoplay);
 pauseMenuSprites = [spr_btn_resume, spr_btn_instructions, spr_btn_settings, spr_btn_main_menu];
 pauseMenuPos = 0;
 
+settingsButtons = [spr_btn_music, spr_btn_effects, spr_btn_back];
+numSettingsButtons = array_length(settingsButtons);
+settingsPos = 0;
+
 var roomViewport = room_get_viewport(room, 0);
 vw = roomViewport[3]; // Get width
 vh = roomViewport[4]; // Get height
-
-//howToPlayFromStart = "GO BACK [BACKSPACE]\nPLAY [ENTER]";
-//howToPlayFromInstructions = "GO BACK [BACKSPACE]";
 
 // Game logic
 totalRotations = 0;
@@ -50,5 +45,5 @@ canGrowMelon = true;
 canGrowBeanstalk = true;
 canGrowTreeOfLife = true;
 
-//bgm_play();
+bgm_play();
 load_sfx();

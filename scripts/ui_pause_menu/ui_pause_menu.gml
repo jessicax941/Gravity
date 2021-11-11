@@ -25,17 +25,17 @@ function draw_pause_menu() {
 		drawY += (sprite_get_height(sprite) + spacing);
 		draw_sprite(sprite, 0, drawX, drawY);
 		if (pauseMenuPos == i) {
-			var selectorX = drawX + sprite_get_width(sprite)/2 + sprite_get_width(spr_selector)
+			var selectorX = drawX + sprite_get_width(sprite)/2 + sprite_get_width(spr_selector);
 			draw_sprite(spr_selector, 0, selectorX, drawY);
 		}
 	}
-		
+	
+	// Your progress will not be saved (after Main Menu button)
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	draw_set_font(dialogFont);
 	var textC = global.orange;
 	draw_text_color(drawX, drawY + sprite_get_height(sprite) + spacing/2, "(Your progress will not be saved)", textC, textC, textC, textC, 1);
-	
 }
 
 function process_pause_menu_input() {
@@ -54,7 +54,6 @@ function process_pause_menu_input() {
 	if (enterKey) {
 		switch (pauseMenuSprites[pauseMenuPos]) {
 			case spr_btn_resume:
-			show_debug_message("resume game");
 				global.gamePaused = false;
 				break;
 			case spr_btn_instructions:
@@ -63,6 +62,7 @@ function process_pause_menu_input() {
 				break;
 			case spr_btn_settings:
 				// Open settings
+				global.isSettingsOpen = true;
 				break;
 			case spr_btn_main_menu:
 				global.gamePaused = false;

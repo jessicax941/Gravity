@@ -1,6 +1,7 @@
 global.bgm = m_bgm;
+global.bgmPriority = 1;
 global.sfxLoaded = false;
-//global.bgmPriority = 1;
+global.isSfxOn = true;
 global.sfxPriority = 2;
 
 function load_sfx() {	
@@ -9,14 +10,24 @@ function load_sfx() {
 	}
 }
 
-//function bgm_play() {
-//	audio_play_sound(global.bgm, global.bgmPriority, true);
-//	audio_sound_gain(global.bgm, 0.5, 0);
-//}
+function bgm_play() {
+	audio_play_sound(global.bgm, global.bgmPriority, true);
+	audio_sound_gain(global.bgm, 0.75, 0);
+}
 
-//function bgm_pause() {
-//	audio_pause_sound(global.bgm);
-//}
+function bgm_stop() {
+	audio_stop_sound(global.bgm);
+}
+
+function sfx_enable() {
+	audio_group_set_gain(audiogroup_sfx, 1, 0);
+	global.isSfxOn = true;
+}
+
+function sfx_disable() {
+	audio_group_set_gain(audiogroup_sfx, 0, 0);
+	global.isSfxOn = false;
+}
 
 function sfx_play(sfx) {
 	if (audio_is_paused(sfx)) {
@@ -49,5 +60,5 @@ function sfx_pause(sfx) {
 
 function sfx_play_door_open() {
 	audio_play_sound(snd_door_open, global.sfxPriority, false);
-	audio_sound_gain(snd_door_open, 0.5, 0);
+	//audio_sound_gain(snd_door_open, 0.5, 0);
 }
