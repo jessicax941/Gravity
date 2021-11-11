@@ -7,6 +7,7 @@
 
 global.orange = make_colour_rgb(255, 185, 102);
 global.gamePaused = false;
+global.isHowToPlayOpen = false;
 
 // Font
 titleSize = 48;
@@ -26,9 +27,11 @@ menuSprites = [spr_btn_start, spr_btn_instructions, spr_btn_settings, spr_btn_cr
 levelSprites = [spr_level1_5, spr_level2_5, spr_level3_5, spr_level4_5, spr_level5_5];
 startMenuPos = 0;
 
-howToPlaySprites = [spr_btn_start, spr_btn_next, spr_btn_back];
+howToPlaySprites = [spr_btn_next, spr_btn_back];
 howToPlayPos = 0;
 howToPlayPage = 0;
+numHowToPlayButtons = array_length(howToPlaySprites) + 1;
+numHowToPlayPages = sprite_get_number(spr_howtoplay);
 
 pauseMenuSprites = [spr_btn_resume, spr_btn_instructions, spr_btn_settings, spr_btn_main_menu];
 pauseMenuPos = 0;

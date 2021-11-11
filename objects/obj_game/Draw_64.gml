@@ -24,28 +24,28 @@ switch (room) {
 	#endregion
 	
 	#region HOW TO PLAY
-	case rm_howtoplay:
+	//case rm_howtkoplay:
 		// How to play background
-		draw_sprite(spr_howtoplay, howToPlayPage, 0, 0);
+		//draw_sprite(spr_howtoplay, howToPlayPage, 0, 0);
 		
-		var spacing = 16;
-		var drawY = startingY + 5;
-		// Confirm to enter text
-		draw_set_halign(fa_right);
-		draw_set_valign(fa_center);
-		draw_set_font(smallFont);
-		var textC = c_white;
-		draw_text_color(startingX, drawY, "CONFIRM [ENTER]", textC, textC, textC, textC, 1);
+		//var spacing = 16;
+		//var drawY = startingY + 5;
+		//// Confirm to enter text
+		//draw_set_halign(fa_right);
+		//draw_set_valign(fa_center);
+		//draw_set_font(smallFont);
+		//var textC = c_white;
+		//draw_text_color(startingX, drawY, "CONFIRM [ENTER]", textC, textC, textC, textC, 1);
 		
-		// How to play buttons
-		for (var i = array_length(howToPlaySprites) - 1; i >= 0; i--) {
-			var sprite = howToPlaySprites[i];
-			var drawX = startingX - sprite_get_width(sprite)/2;
-			drawY -= (sprite_get_height(sprite) + spacing);
-			draw_sprite(sprite, 0, drawX, drawY);
-			if (howToPlayPos == i) { draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), drawY); }
-		}
-		break;
+		//// How to play buttons
+		//for (var i = array_length(howToPlaySprites) - 1; i >= 0; i--) {
+		//	var sprite = howToPlaySprites[i];
+		//	var drawX = startingX - sprite_get_width(sprite)/2;
+		//	drawY -= (sprite_get_height(sprite) + spacing);
+		//	draw_sprite(sprite, 0, drawX, drawY);
+		//	if (howToPlayPos == i) { draw_sprite(spr_selector, 0, startingX + sprite_get_width(spr_selector), drawY); }
+		//}
+		//break;
 	#endregion
 		
 	#region LEVELS
@@ -96,7 +96,15 @@ switch (room) {
 		break;
 	#endregion
 }
+//show_debug_message(string(global.isHowToPlayOpen));
 
-if (global.gamePaused) {
+if (global.gamePaused) { 
 	draw_pause_menu();
+	//show_debug_message("drawing pause menu");
 }
+
+if (global.isHowToPlayOpen) {
+	draw_howtoplay();
+	//show_debug_message("drawing how to play");
+}
+

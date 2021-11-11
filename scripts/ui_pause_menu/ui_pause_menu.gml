@@ -1,5 +1,3 @@
-
-
 function draw_pause_menu() {
 	var yOffset = 50;
 	
@@ -40,7 +38,7 @@ function draw_pause_menu() {
 	
 }
 
-function get_pause_menu_input() {
+function process_pause_menu_input() {
 	if (upKey || downKey || enterKey) {
 		audio_play_sound(snd_button_click, global.sfxPriority, false);
 	}
@@ -56,17 +54,21 @@ function get_pause_menu_input() {
 	if (enterKey) {
 		switch (pauseMenuSprites[pauseMenuPos]) {
 			case spr_btn_resume:
+			show_debug_message("resume game");
 				global.gamePaused = false;
 				break;
 			case spr_btn_instructions:
 				// Open instructions
+				global.isHowToPlayOpen = true;
 				break;
 			case spr_btn_settings:
 				// Open settings
 				break;
 			case spr_btn_main_menu:
+				global.gamePaused = false;
 				room_goto(rm_start);
 				break;
 		}
+		pauseMenuPos = 0;
 	}
 }
