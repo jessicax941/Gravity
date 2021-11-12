@@ -36,7 +36,6 @@
     {"id":{"name":"rm_level4","path":"rooms/rm_level4/rm_level4.yy",},"order":5,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"obj_walls_vert","path":"objects/obj_walls_vert/obj_walls_vert.yy",},"order":7,},
-    {"id":{"name":"spr_platform_smaller","path":"sprites/spr_platform_smaller/spr_platform_smaller.yy",},"order":9,},
     {"id":{"name":"spr_btn_effects","path":"sprites/spr_btn_effects/spr_btn_effects.yy",},"order":26,},
     {"id":{"name":"seq_ending","path":"sequences/seq_ending/seq_ending.yy",},"order":1,},
     {"id":{"name":"spr_btn_settings","path":"sprites/spr_btn_settings/spr_btn_settings.yy",},"order":7,},
@@ -177,7 +176,6 @@
     {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [
-    {"CopyToMask":3035461389054378222,"filePath":"datafiles","resourceVersion":"1.0","name":"orange_kid.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"wooden-log.ttf","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
