@@ -3,9 +3,9 @@ numRotations = 0;
 
 // Reset powers every time player starts level 1
 if (room == rm_level1) {
-	//canGrowMelon = false;
-	//canGrowBeanstalk = false;
-	//canGrowTreeOfLife = false;
+	canGrowMelon = false;
+	canGrowBeanstalk = false;
+	canGrowTreeOfLife = false;
 }
 
 if (room == rm_ending) {

@@ -22,15 +22,15 @@ if (global.gamePaused) {
 }
 
 // CHEATS
-if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
-if (keyboard_check_pressed(ord("2"))) { room_goto(rm_level2); }
-if (keyboard_check_pressed(ord("3"))) { room_goto(rm_level3); }
-if (keyboard_check_pressed(ord("4"))) { room_goto(rm_level4); }
-if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
-if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
-if (keyboard_check_pressed(ord("9"))) { room_goto(rm_intro); }
-if (keyboard_check_pressed(ord("0"))) { room_goto(rm_ending); }
-if (keyboard_check_pressed(vk_tab)) { room_goto(rm_victory); }
+//if (keyboard_check_pressed(ord("1"))) { room_goto(rm_level1); }
+//if (keyboard_check_pressed(ord("2"))) { room_goto(rm_level2); }
+//if (keyboard_check_pressed(ord("3"))) { room_goto(rm_level3); }
+//if (keyboard_check_pressed(ord("4"))) { room_goto(rm_level4); }
+//if (keyboard_check_pressed(ord("5"))) { room_goto(rm_level5); }
+//if (keyboard_check_pressed(ord("6"))) { room_goto(rm_level6); }
+//if (keyboard_check_pressed(ord("9"))) { room_goto(rm_intro); }
+//if (keyboard_check_pressed(ord("0"))) { room_goto(rm_ending); }
+//if (keyboard_check_pressed(vk_tab)) { room_goto(rm_victory); }
 
 if (room == rm_start) {
 	if (upKey || downKey || enterKey) {
