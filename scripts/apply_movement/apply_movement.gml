@@ -47,7 +47,7 @@ function apply_gravity() {
 	isMelonGrounded = false;
 
 	for (var i = 0; i < ds_list_size(melonCollisionObj); i++) {
-		var collision = collision_rectangle(bbox_left, bbox_bottom - 1, bbox_right, bbox_bottom + 1, ds_list_find_value(melonCollisionObj, i),
+		var collision = collision_rectangle(bbox_left+1, bbox_bottom - 1, bbox_right-1, bbox_bottom+1, ds_list_find_value(melonCollisionObj, i),
 			false, true);
 		if (collision) {
 			isMelonGrounded = true;

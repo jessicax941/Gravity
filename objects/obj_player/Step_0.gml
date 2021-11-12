@@ -50,7 +50,7 @@ if (global.gamePaused) { return; }
 		
 		// Move up only if there is a beanstalk above
 		if (keyboard_check(vk_up)) {
-			if (place_meeting(x, y - global.tileSize, obj_beanstalk)) {
+			if (place_meeting(x, y - 1, obj_beanstalk)) {
 				apply_vertical_movement(-climbingSpeed);
 			}
 		}

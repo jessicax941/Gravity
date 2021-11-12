@@ -1,5 +1,10 @@
 function can_rotate() {
-	// First check if watermelons are grounded, if any of them are not grounded, cannot rotate
+	// First check if player is in the doorway/corridor
+	if (place_meeting(x, y, obj_corridor)) {
+		return false;
+	}
+	
+	// Check if watermelons are grounded, if any of them are not grounded, cannot rotate
 	if (instance_exists(obj_watermelon)) {
 		with (obj_watermelon) {
 			if (!isMelonGrounded) { return false };
@@ -15,15 +20,15 @@ function can_rotate() {
 function on_rotate(isClockwise) {
 	if (can_rotate()) {
 		global.isRotating = true;
-		var beanstalkAttachedToPlayer = instance_place(x, y, obj_beanstalk);
+		//var beanstalkAttachedToPlayer = instance_place(x, y, obj_beanstalk);
 		
 		rotate_room(isClockwise);
 		rotate_player(isClockwise);
 		// Maintain player's position if was on a beanstalk
-		if (beanstalkAttachedToPlayer != noone) {
-			obj_player.x = beanstalkAttachedToPlayer.x;
-			obj_player.y = beanstalkAttachedToPlayer.y;
-		}
+		//if (beanstalkAttachedToPlayer != noone) {
+		//	obj_player.x = beanstalkAttachedToPlayer.x;
+		//	obj_player.y = beanstalkAttachedToPlayer.y;
+		//}
 		
 		with (obj_game) { numRotations++; }
 		global.isRotating = false;
@@ -52,6 +57,7 @@ function rotate_room(isClockwise) {
 function rotate_player(isClockwise) {	
 	// Rotate player
 	rotate_object(isClockwise);
+	
 	// Move player if collide with wall/platform after rotating
 	// First check if there is collision with the current tile that player is in
 	var tileCentres = get_tile_center(x, y);
@@ -59,6 +65,7 @@ function rotate_player(isClockwise) {
 	var tileCenterY = tileCentres[1];
 	
 	if (!has_collision(tileCenterX, tileCenterY)) {
+		//if (place_meeting(x, y, obj_beanstalk)) { return; }
 		// No collision, assign player to the center of current tile
 		x = tileCenterX;
 		y = tileCenterY;

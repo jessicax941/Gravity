@@ -5,8 +5,6 @@ switch (event_data[? "message"])
     {
     case "footstep":
 		sfx_play_walk_stone();
-        
-		show_debug_message("footstep");
         break;
 	default:
 		// Do nothing
