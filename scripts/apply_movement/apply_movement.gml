@@ -47,7 +47,7 @@ function apply_gravity() {
 	isMelonGrounded = false;
 
 	for (var i = 0; i < ds_list_size(melonCollisionObj); i++) {
-		var collision = collision_rectangle(bbox_left+1, bbox_bottom - 1, bbox_right-1, bbox_bottom+1, ds_list_find_value(melonCollisionObj, i),
+		var collision = collision_rectangle(bbox_left+1, bbox_bottom-1, bbox_right-1, bbox_bottom+1, ds_list_find_value(melonCollisionObj, i),
 			false, true);
 		if (collision) {
 			isMelonGrounded = true;
@@ -63,7 +63,7 @@ function apply_gravity() {
 			var isColliding  = false;
 			while (!isColliding) {
 				// Move object step by step as long as there is no collision
-				if (!has_collision(x, y + sign(vertSpeed)) && !place_meeting(x, y + vertSpeed, obj_player)) {
+				if (!has_collision(x, y + sign(vertSpeed)) && !place_meeting(x, y + sign(vertSpeed), obj_player)) {
 					y += sign(vertSpeed);
 				} else {
 					isColliding = true;
